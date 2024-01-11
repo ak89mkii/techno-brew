@@ -15,6 +15,7 @@ https://www.dicedex.io/
 - CSS
 - Bootstrap
 #### Back-End:
+- Python 3
 - Django
 - PostgreSQL
 #### Packages:
