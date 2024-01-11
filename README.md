@@ -18,8 +18,11 @@ https://www.dicedex.io/
 - Python 3
 - Django
 - PostgreSQL
-#### Packages:
+#### Packages and Installs:
 // https://pypi.org/project/python-dotenv/
+// https://docs.djangoproject.com/en/5.0/topics/install/
+// https://www.enterprisedb.com/postgresql-tutorial-resources-training-1?uuid=c7ba5619-2f80-49e6-8b3f-771e43cbdbfe&campaignId=Product_Trial_PostgreSQL_16
+// https://pypi.org/project/psycopg2/
 // https://pypi.org/project/dj-database-url/
 // https://pypi.org/project/django-heroku/
 // https://gunicorn.org/
