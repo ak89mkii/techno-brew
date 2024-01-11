@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    {% if object %}
+    <br>
+    <div id="title">
+        <p>Set Color Mode</p>
+    </div>
+    <br>
+    {% else %}
+    <br>
+    <div id="title">
+        <p>Set Color Mode</p>
+    </div>
+    <br>
+    {% endif %}
+    <div class="container">
+        <div class="card border-dark mb-3">
+            <img src="{% static 'light.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <form action="" method="post">
+                    {% csrf_token %}
+                    <table class="form-control">
+                    {{ form.as_table }}
+                    </table>
+                    <br>
+                    <input action="{% url 'home_logged_in' %}" type="submit" value="Submit" class="btn btn-warning">
+                    <!-- <a href="http://127.0.0.1:8000/groups/"> -->
+                        <button onclick="history.back()" type="button" class="btn btn-dark">Cancel</button>                    
+                    <!-- </a> -->
+                </form>
+                <br>
+            </div>
+        </div>
+    </div>
+    <br>
+{% endblock %}

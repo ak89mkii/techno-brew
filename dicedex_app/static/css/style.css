@@ -1,0 +1,82 @@
+/* Nav: */
+
+#menu {
+    background-color: cornflowerblue;
+    font-size: 50px;
+    font-weight: 800;
+    /* font-family: 'Nanum Brush Script', cursive; */
+}
+
+.nav-link {
+    font-size: 20px;
+    padding-right: 5px;
+    color: black;
+}
+
+.form-check {
+    font-size: 20px;
+}
+
+
+/* All Pages */
+
+body {
+    background-color: cornflowerblue;
+    color: black;
+}
+/* 
+.dark {
+    background-color: rgb(27, 27, 27);
+    color: black;
+} */
+
+#Dark {
+    background-color: rgb(27, 27, 27);
+}
+
+#Light {
+    background-color: rgb(242, 242, 245);
+}
+
+
+#title {
+    /* background-color: rgb(246, 238, 131); */
+    background-color: #08f9a0;
+    color: black;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 200;    
+    /* font-family: 'Nanum Brush Script', cursive; */
+}
+
+/* Library: */
+
+.card-img-top {
+    /* margin: 2px; */
+    width: 100%;
+    height: 80vw;
+    /* object-fit: cover; */
+}
+
+@media screen and (min-width: 767px) {
+    .card-img-top {
+        /* margin: 2px; */
+        width: 100%;
+        height: 30vw;
+        /* object-fit: cover; */
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .card-img-top {
+        /* margin: 2px; */
+        width: 100%;
+        height: 15vw;
+        /* object-fit: cover; */
+    }
+}
+
+/*  Error 404  */
+.error { 
+    font-family: 'Press Start 2P', cursive;
+}

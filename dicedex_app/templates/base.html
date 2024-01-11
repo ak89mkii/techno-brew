@@ -1,0 +1,94 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&family=Nunito&family=Open+Sans:wght@300&family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>	
+
+    <title>DiceDex.io</title>
+</head>
+
+<body id='{{ themes.color }}' class='dark'>
+    <header id="menu">
+    {% if not_form == 'not_form' %}
+    <nav class="navbar ">
+    <div class="container"> 
+        <a href="{% url 'home_logged_in' %}" style="text-decoration: none; color: black">
+            <img src="{% static '06.png' %}" width="100" height="100" alt="" loading="lazy">DiceDex.io
+        </a>    
+    
+    <!-- <nav class="navbar navbar-dark bg-dark"> -->
+        {% if user.is_authenticated %}
+
+        {% if themes == null and context != 'Home' %}
+        <div class="form-check form-switch">
+            <a href="{% url 'themes_create' %}" class="btn btn-dark">
+            <label class="form-check-label" for="flexSwitchCheckChecked">Dark Mode</label></a>
+        </div>     
+
+        {% elif context == 'Home' %}
+        <div></div>
+        
+        {% else %}
+        {% for switch in switches %}
+        <div class="form-check form-switch">
+            <a href="{% url 'themes_update' switch.id %}" class="btn btn-dark">
+            <label class="form-check-label" for="flexSwitchCheckChecked">{{ switch.color }} Mode</label></a>
+        </div>
+        {% endfor %}
+        {% endif %}
+        
+        <!-- Navbar ("Lists" Dropdown). -->
+        <a class="nav-link" href="{% url 'groups' %}">Groups</a>
+        <ul class="nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Lists</a>
+                <ul class="dropdown-menu dropdown-menu-end">
+                    <li><a class="dropdown-item" href="{% url 'event' %}"><b><p>Bring to Event</p></b></a></li>
+                    <li><a class="dropdown-item" href="{% url 'library' %}"><b><p>My Personal Collection</p></b></a></li>
+                    <li><a class="dropdown-item" href="{% url 'wishlist_user' %}"><b><p>My Wishlist</p></b></a></li>
+                </ul>
+            </li>
+        </ul>
+                
+        <!-- Navbar (User Info Dropedown and Log Out). -->
+        <ul class="nav">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{ user }}</a>
+                <ul class="dropdown-menu dropdown-menu-lg-end">
+                    <li><p class="dropdown-item"><b>User Name</b>: {{ user }}</p></li>
+                    <li><p class="dropdown-item"><b>Group(s)</b>: {{ groups }}</p></li>
+                    <hr></hr>
+                    <li><a class="dropdown-item" href="{% url 'logout' %}"><b>Log Out</b></a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+        
+        {% else %}
+
+        <div class="btn-group">
+            <a class="nav-link" href="{% url 'signup' %}">Sign-Up</a>
+            <a class="nav-link">/</a>
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
+        </div>
+
+        {% endif %}
+    </div>
+    </nav>
+    {% endif %}    
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>  
+</body>
+
+</html>

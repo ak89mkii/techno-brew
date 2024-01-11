@@ -1,0 +1,116 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+{% for group in groups %}
+{% if group == context or group == context.0 %}
+
+{% if context == 'Coffee' %}
+<br>
+<div id="title">
+  <p>Coffee Group Game Library</p>
+</div>
+<br>
+{% elif context == 'Hoth' %}
+<br>
+<div id="title">
+  <p>Hoth Group Game Library</p>
+</div>
+<br>
+{% elif context == 'Gundam' %}
+<br>
+<div id="title">
+  <p>Gundam Group Game Library</p>
+</div>
+<br>
+{% elif context.1 == 'Personal' %}
+<br>
+<div id="title">
+  <p>Personal Collection Game Library</p>
+</div>
+<br>
+{% elif context.1 == 'Event' %}
+<br>
+<div id="title">
+  <p>Games to Bring to Event or Game Night</p>
+</div>
+<br>
+{% elif context.1 == 'Wishlist User' %}
+<br>
+<div id="title">
+  <p>Personal Wishlist</p>
+</div>
+{% endif %}
+
+<!-- Add Button -->
+<!-- <container> -->
+  {% if context.1 != 'Event' %}
+  <div class="d-grid gap-2 col-5 mx-auto">
+    <a href="{% url 'games_create' %}" class="btn btn-primary btn-lg">Add New Game</a>
+  </div>
+  {% elif context.1 == 'Event' %}
+  <div class="d-grid gap-2 col-2 mx-auto">
+    <a href="{% url 'library' %}" class="btn btn-primary btn-lg">Back to Library</a>
+  </div>
+  {% endif %}
+
+<!-- </container> -->
+<br>
+
+    <!-- Games -->
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 row-cols-xxl-4 g-4">
+
+    {% for game in games %}
+    <div class="col">
+      <div class="card {{ game.color }} mb-3 mx-auto h-100" >
+        <img src={{ game.image }} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h4 class="card-title">{{ game.title }}</h4>
+          <p class="card-text"><b>Owner / User:</b> {{ game.user }} </p>
+          <hr>
+          {% if game.wishlist_user == False %}
+          <p class="card-text"><b>Genre:</b> {{ game.genre }}</p>
+          <p class="card-text"><b>Player Count</b>: {{ game.min }} <b>to</b> {{ game.max }}</p>
+          <p class="card-text"><b>Length:</b> <b>~</b> {{ game.length }} <b>Minutes</b></p>
+          <p class="card-text"><b>Type:</b> {{ game.type }}</p>
+          <p class="card-text"><b>Notes:</b> {{ game.note }}</p>
+          <p class="card-text"><b>Link:</b> <a href="{{ game.link }}">{{ game.link }}</a></p>
+          {% elif game.wishlist_user == True %}
+          <p class="card-text"><b>Cost:</b>  <b>~</b>  <b>$</b>{{ game.cost }}</p>
+          <p class="card-text"><b>Notes:</b> {{ game.note }}</p>
+          <p class="card-text"><b>Link:</b> <a href="{{ game.link }}">{{ game.link }}</a></p>
+          {% endif %}      
+          {% if game.user == user %}
+          <a href="{% url 'games_update' game.id %}" class="btn btn-dark">Edit</a>
+          <a href="{% url 'games_delete' game.id %}" class="btn btn-warning">Delete</a>
+          {% else %}
+          {% endif %}      
+        </div>
+        <div class="card-footer">
+          <p class="text-muted">Added to DiceDex: {{ game.timestamp }}</p>
+        </div>
+      </div>   
+    </div> 
+    {% endfor %}
+
+  </div> 
+</div>
+<br/>
+
+{% endif %}
+{% endfor %}
+
+{% if group != context %}
+  {% if context.0 != 'Personal' %}
+  <br>
+  <div id="title">
+    <p>Not Registered With This Group</p>
+  </div>
+  <br>
+  {% endif %}
+
+{% endif %}
+
+{% endblock %}
