@@ -6,7 +6,13 @@
 {% for group in groups %}
 {% if group == context or group == context.0 %}
 
-{% if context == 'Sites' %}
+{% if context == 'Link' %}
+<br>
+<div id="title">
+  <p>Link Share</p>
+</div>
+<br>
+{% elif context == 'Sites' %}
 <br>
 <div id="title">
   <p>Sites and Software Tools Reference</p>
@@ -27,7 +33,7 @@
 {% elif context.1 == 'Personal' %}
 <br>
 <div id="title">
-  <p>Personal Collection Game Library</p>
+  <p>Link Share</p>
 </div>
 <br>
 {% elif context.1 == 'Event' %}
