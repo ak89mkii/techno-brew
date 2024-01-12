@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Game, Theme
+from .models import Item, Theme
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -42,7 +42,7 @@ def groups(request):
 @login_required
 def library_index(request):
     not_form = 'not_form'
-    games = Game.objects.filter(user=request.user, wishlist_user=False).order_by('title')
+    games = Item.objects.filter(user=request.user, wishlist_user=False).order_by('title')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = 'Link'
@@ -55,7 +55,7 @@ def library_index(request):
 @login_required
 def library_index_01(request):
     not_form = 'not_form'
-    games = Game.objects.filter(coffee_group=True, wishlist_user=False).order_by('title')
+    games = Item.objects.filter(coffee_group=True, wishlist_user=False).order_by('title')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = 'Sites'
@@ -67,7 +67,7 @@ def library_index_01(request):
 @login_required
 def library_index_02(request):
     not_form = 'not_form'
-    games = Game.objects.filter(hoth_group=True, wishlist_user=False).order_by('title')
+    games = Item.objects.filter(hoth_group=True, wishlist_user=False).order_by('title')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = 'Hoth'
@@ -79,7 +79,7 @@ def library_index_02(request):
 @login_required
 def library_index_03(request):
     not_form = 'not_form'
-    games = Game.objects.filter(gundam_group=True, wishlist_user=False).order_by('title')
+    games = Item.objects.filter(gundam_group=True, wishlist_user=False).order_by('title')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = 'Gundam'
@@ -92,7 +92,7 @@ def library_index_03(request):
 @login_required
 def library_index(request):
     not_form = 'not_form'
-    games = Game.objects.filter(user=request.user, wishlist_user=False).order_by('title')
+    games = Item.objects.filter(user=request.user, wishlist_user=False).order_by('title')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = ['Personal', 'Personal']
@@ -104,7 +104,7 @@ def library_index(request):
 @login_required
 def event(request):
     not_form = 'not_form'
-    games = Game.objects.filter(event=True).order_by('title')
+    games = Item.objects.filter(event=True).order_by('title')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = ['Personal', 'Event']
@@ -116,7 +116,7 @@ def event(request):
 @login_required
 def wishlist_user(request):
     not_form = 'not_form'
-    games = Game.objects.filter(wishlist_user=True, user=request.user).order_by('title')
+    games = Item.objects.filter(wishlist_user=True, user=request.user).order_by('title')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = ['Personal', 'Wishlist User']
@@ -127,8 +127,8 @@ def wishlist_user(request):
 
 
 # Game
-class GameCreate(LoginRequiredMixin, CreateView):
-    model = Game
+class ItemCreate(LoginRequiredMixin, CreateView):
+    model = Item
     fields = ['title', 'genre', 'min', 'max', 'length', 'image', 'type', 'note', 'cost', 'color', 'link', 'event', 'wishlist_user', 'coffee_group', 'hoth_group', 'gundam_group']
   
     def form_valid(self, form):
@@ -136,12 +136,12 @@ class GameCreate(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 class GameUpdate(LoginRequiredMixin, UpdateView):
-    model = Game
+    model = Item
     fields = ['title', 'genre', 'min', 'max', 'length', 'image', 'type', 'note', 'cost', 'color', 'link', 'event', 'wishlist_user', 'coffee_group', 'hoth_group', 'gundam_group']
 
 class GameDelete(LoginRequiredMixin, DeleteView):
-    model = Game
-    success_url = '/home_logged_in/'
+    model = Item
+    success_url = '/home_logged_in'
 
 
 # Theme

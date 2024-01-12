@@ -18,8 +18,8 @@ urlpatterns = [
     # signup
     path('accounts/signup/', views.signup, name='signup'),
 
-    # games
-    path('games/create/', views.GameCreate.as_view(), name='games_create'),
+    # items
+    path('games/create/', views.ItemCreate.as_view(), name='items_create'),
     path('games/<int:pk>/update/', views.GameUpdate.as_view(), name='games_update'),
     path('games/<int:pk>/delete/', views.GameDelete.as_view(), name='games_delete'),
 

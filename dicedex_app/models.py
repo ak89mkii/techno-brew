@@ -27,7 +27,7 @@ CARDS = (
 )
 
 
-class Game(models.Model):
+class Item(models.Model):
     title = models.CharField(max_length=100, default="None")
     genre = models.CharField(max_length=100, default="None")
     min = models.CharField(max_length=100, default="None")

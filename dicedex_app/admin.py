@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from .models import Game, Theme
+from .models import Item, Theme
 
 # Register your models here.
-admin.site.register(Game)
+admin.site.register(Item)
 admin.site.register(Theme)
