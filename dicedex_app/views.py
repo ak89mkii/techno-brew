@@ -38,6 +38,7 @@ def groups(request):
     themes = Theme.objects.filter(user=request.user).order_by('color').last()
     return render(request, 'groups.html', { 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes, not_form : 'not_form' })
 
+# SECTION LISTS: Personal Items
 @login_required
 def library_index(request):
     not_form = 'not_form'
@@ -50,13 +51,14 @@ def library_index(request):
     themes = Theme.objects.filter(user=request.user).order_by('color').last()
     return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes, not_form : 'not_form' })
 
+# SECTION MAIN: Sites and Software Tools Reference
 @login_required
 def library_index_01(request):
     not_form = 'not_form'
     games = Game.objects.filter(coffee_group=True, wishlist_user=False).order_by('title')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
-    context = 'Coffee'
+    context = 'Sites'
     switches = Theme.objects.filter(user=request.user).order_by('color')
     # References the last Theme entry to change the "background" color id.
     themes = Theme.objects.filter(user=request.user).order_by('color').last()
