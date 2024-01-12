@@ -1,7 +1,7 @@
 # Techno Brew: Tech-Assist App
 
 ## Description:
-(Full-Stack, Django, PostgreSQL) | A web-based IT support specialist resources application.
+(Full-Stack, Django, PostgreSQL) | A web-based IT support specialist resources application (In-house Version).
 
 ## Deployment Link:
 https://www.dicedex.io/
