@@ -55,14 +55,14 @@ def library_index(request):
 @login_required
 def library_index_01(request):
     not_form = 'not_form'
-    games = Item.objects.filter(coffee_group=True, wishlist_user=False).order_by('title')
+    items = Item.objects.filter(type='Tool', wishlist_user=False).order_by('label')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = 'Sites'
     switches = Theme.objects.filter(user=request.user).order_by('color')
     # References the last Theme entry to change the "background" color id.
     themes = Theme.objects.filter(user=request.user).order_by('color').last()
-    return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes, not_form : 'not_form' })
+    return render(request, 'library/index.html', { 'items' : items, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes, not_form : 'not_form' })
 
 @login_required
 def library_index_02(request):
@@ -129,7 +129,7 @@ def wishlist_user(request):
 # Game
 class ItemCreate(LoginRequiredMixin, CreateView):
     model = Item
-    fields = ['title', 'genre', 'min', 'max', 'length', 'image', 'type', 'note', 'cost', 'color', 'link', 'event', 'wishlist_user', 'coffee_group', 'hoth_group', 'gundam_group']
+    fields = ['label','image', 'type', 'note', 'color', 'link', 'event', 'wishlist_user', ]
   
     def form_valid(self, form):
         form.instance.user = self.request.user  
@@ -137,7 +137,7 @@ class ItemCreate(LoginRequiredMixin, CreateView):
 
 class GameUpdate(LoginRequiredMixin, UpdateView):
     model = Item
-    fields = ['title', 'genre', 'min', 'max', 'length', 'image', 'type', 'note', 'cost', 'color', 'link', 'event', 'wishlist_user', 'coffee_group', 'hoth_group', 'gundam_group']
+    fields = ['label','image', 'type', 'note', 'color', 'link', 'event', 'wishlist_user', ]
 
 class GameDelete(LoginRequiredMixin, DeleteView):
     model = Item

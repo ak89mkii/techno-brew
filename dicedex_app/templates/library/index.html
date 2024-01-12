@@ -68,34 +68,30 @@
 <div class="container">
   <div class="row row-cols-1 row-cols-md-3 row-cols-xxl-4 g-4">
 
-    {% for game in games %}
+    {% for item in items %}
     <div class="col">
       <div class="card {{ game.color }} mb-3 mx-auto h-100" >
-        <img src={{ game.image }} class="card-img-top" alt="...">
+        <img src={{ item.image }} class="card-img-top" alt="...">
         <div class="card-body">
-          <h4 class="card-title">{{ game.title }}</h4>
-          <p class="card-text"><b>Owner / User:</b> {{ game.user }} </p>
+          <h4 class="card-title">{{ item.label }}</h4>
+          <p class="card-text"><b>Created By:</b> {{ item.user }} </p>
           <hr>
-          {% if game.wishlist_user == False %}
-          <p class="card-text"><b>Genre:</b> {{ game.genre }}</p>
-          <p class="card-text"><b>Player Count</b>: {{ game.min }} <b>to</b> {{ game.max }}</p>
-          <p class="card-text"><b>Length:</b> <b>~</b> {{ game.length }} <b>Minutes</b></p>
-          <p class="card-text"><b>Type:</b> {{ game.type }}</p>
-          <p class="card-text"><b>Notes:</b> {{ game.note }}</p>
-          <p class="card-text"><b>Link:</b> <a href="{{ game.link }}">{{ game.link }}</a></p>
-          {% elif game.wishlist_user == True %}
-          <p class="card-text"><b>Cost:</b>  <b>~</b>  <b>$</b>{{ game.cost }}</p>
-          <p class="card-text"><b>Notes:</b> {{ game.note }}</p>
-          <p class="card-text"><b>Link:</b> <a href="{{ game.link }}">{{ game.link }}</a></p>
+          {% if item.wishlist_user == False %}
+          <p class="card-text"><b>Type:</b> {{ item.type }}</p>
+          <p class="card-text"><b>Notes:</b> {{ item.note }}</p>
+          <p class="card-text"><b>Link:</b> <a href="{{ game.link }}">{{ item.link }}</a></p>
+          {% elif item.wishlist_user == True %}
+          <p class="card-text"><b>Notes:</b> {{ item.note }}</p>
+          <p class="card-text"><b>Link:</b> <a href="{{ game.link }}">{{ item.link }}</a></p>
           {% endif %}      
-          {% if game.user == user %}
-          <a href="{% url 'games_update' game.id %}" class="btn btn-dark">Edit</a>
-          <a href="{% url 'games_delete' game.id %}" class="btn btn-warning">Delete</a>
+          {% if item.user == user %}
+          <a href="{% url 'games_update' item.id %}" class="btn btn-dark">Edit</a>
+          <a href="{% url 'games_delete' item.id %}" class="btn btn-warning">Delete</a>
           {% else %}
           {% endif %}      
         </div>
         <div class="card-footer">
-          <p class="text-muted">Added to DiceDex: {{ game.timestamp }}</p>
+          <p class="text-muted">Added to Techno Brew: {{ item.timestamp }}</p>
         </div>
       </div>   
     </div> 

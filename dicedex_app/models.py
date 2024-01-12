@@ -6,8 +6,9 @@ from django.contrib.auth.models import User, Group
 # Create your models here.
 
 TYPES = (
-    ('Base Game', 'Base Game'),
-    ('Expansion', 'Expansion')
+    ('Link', 'Link'),
+    ('Tool', 'Tool'),
+    ('Inventory', 'Inventory')
 )
 
 COLORS = (
@@ -28,12 +29,8 @@ CARDS = (
 
 
 class Item(models.Model):
-    title = models.CharField(max_length=100, default="None")
-    genre = models.CharField(max_length=100, default="None")
-    min = models.CharField(max_length=100, default="None")
-    max = models.CharField(max_length=100, default="None")
-    length = models.IntegerField(default=0)
-    image = models.CharField(max_length=1000, default="/static/06.png")
+    label = models.CharField(max_length=100, default="None")
+    image = models.CharField(max_length=1000, default="/static/07.png")
     type = models.CharField(
         max_length=30,
         choices=TYPES,
@@ -46,16 +43,12 @@ class Item(models.Model):
         choices=CARDS,
         default=CARDS[0][0]
     )
-    cost = models.IntegerField(default=0)
     timestamp = models.DateField(auto_now_add=True)
     # Also for "owner field"
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     # group = models.ForeignKey(Group, on_delete=models.CASCADE)
     event = models.BooleanField(default=False)
     wishlist_user = models.BooleanField(default=False)
-    coffee_group = models.BooleanField(default=False)
-    hoth_group = models.BooleanField(default=False)
-    gundam_group = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
