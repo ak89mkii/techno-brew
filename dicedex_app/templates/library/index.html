@@ -70,11 +70,14 @@
 
     {% for item in items %}
     <div class="col">
-      <div class="card {{ game.color }} mb-3 mx-auto h-100" >
-        <img src={{ item.image }} class="card-img-top" alt="...">
+      <div class="card {{ item.color }} mb-3 mx-auto h-100" >
+        <!-- <img src={{ item.image }} class="card-img-top" alt="..."> -->
         <div class="card-body">
+          <img src={{ item.image }} class="border-dark card-img-top" alt="...">
+          <hr>
+
           <h4 class="card-title">{{ item.label }}</h4>
-          <p class="card-text"><b>Created By:</b> {{ item.user }} </p>
+          <p class="card-text"><b>Description:</b> {{ item.description }} </p>
           <hr>
           {% if item.wishlist_user == False %}
           <p class="card-text"><b>Type:</b> {{ item.type }}</p>
@@ -91,6 +94,7 @@
           {% endif %}      
         </div>
         <div class="card-footer">
+          <p class="card-text"><b>Created By:</b> {{ item.user }} </p>
           <p class="text-muted">Added to Techno Brew: {{ item.timestamp }}</p>
         </div>
       </div>   

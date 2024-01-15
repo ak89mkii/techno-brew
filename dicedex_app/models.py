@@ -18,18 +18,19 @@ COLORS = (
 
 CARDS = (
     ('border-dark', 'White'),
-    ('text-white bg-primary', 'Blue'),
-    ('text-white bg-secondary', 'Grey'),
-    ('text-white bg-success', 'Green'),
-    ('text-white bg-danger', 'Red'),
-    # ('text-white bg-warning', 'Yellow'),
-    ('text-white bg-info', 'Aqua'),
-    # ('text-white bg-dark', 'Dark Grey')
+    # ('text-white bg-primary', 'Blue
+    # ('text-white bg-secondary', 'Grey'),
+    # ('text-white bg-success', 'Green'),
+    # ('text-white bg-danger', 'Red'),
+    ('border-dark bg-warning', 'Yellow'),
+    ('border-dark bg-info', 'Light Blue'),
+    ('text-white bg-dark', 'Black')
 )
 
 
 class Item(models.Model):
     label = models.CharField(max_length=100, default="None")
+    description = models.CharField(max_length=1000, default="None")
     image = models.CharField(max_length=1000, default="/static/07.png")
     type = models.CharField(
         max_length=30,

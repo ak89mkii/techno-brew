@@ -129,7 +129,7 @@ def wishlist_user(request):
 # Game
 class ItemCreate(LoginRequiredMixin, CreateView):
     model = Item
-    fields = ['label','image', 'type', 'note', 'color', 'link', 'event', 'wishlist_user', ]
+    fields = ['label','decription', 'image', 'type', 'note', 'color', 'link', 'event', 'wishlist_user', ]
   
     def form_valid(self, form):
         form.instance.user = self.request.user  
@@ -137,7 +137,7 @@ class ItemCreate(LoginRequiredMixin, CreateView):
 
 class GameUpdate(LoginRequiredMixin, UpdateView):
     model = Item
-    fields = ['label','image', 'type', 'note', 'color', 'link', 'event', 'wishlist_user', ]
+    fields = ['label','decription', 'image', 'type', 'note', 'color', 'link', 'event', 'wishlist_user', ]
 
 class GameDelete(LoginRequiredMixin, DeleteView):
     model = Item
