@@ -69,24 +69,20 @@
   <div class="row row-cols-1 row-cols-md-3 row-cols-xxl-4 g-4">
 
     {% for item in items %}
+    {% if context == 'Tools' and item.type == 'Tool' %}
     <div class="col">
       <div class="card {{ item.color }} mb-3 mx-auto h-100" >
         <!-- <img src={{ item.image }} class="card-img-top" alt="..."> -->
         <div class="card-body">
           <img src={{ item.image }} class="border-dark card-img-top" alt="...">
           <hr>
-
           <h4 class="card-title">{{ item.label }}</h4>
           <p class="card-text"><b>Description:</b> {{ item.description }} </p>
           <hr>
-          {% if item.wishlist_user == False %}
           <p class="card-text"><b>Type:</b> {{ item.type }}</p>
           <p class="card-text"><b>Notes:</b> {{ item.note }}</p>
           <p class="card-text"><b>Link:</b> <a href="{{ game.link }}">{{ item.link }}</a></p>
-          {% elif item.wishlist_user == True %}
-          <p class="card-text"><b>Notes:</b> {{ item.note }}</p>
-          <p class="card-text"><b>Link:</b> <a href="{{ game.link }}">{{ item.link }}</a></p>
-          {% endif %}      
+          
           {% if item.user == user %}
             {% if item.color != 'text-white bg-dark' %}
             <a href="{% url 'games_update' item.id %}" class="btn btn-dark">Edit</a>
@@ -98,18 +94,31 @@
             {% else %}
             <a href="{% url 'games_delete' item.id %}" class="btn btn-danger">Delete</a>
             {% endif %} 
-          {% else %}
-               
-
-          {% endif %}      
+          {% endif %}
         </div>
+
         <div class="card-footer">
           <p class="card-text"><b>Created By:</b> {{ item.user }} </p>
           <p class="text-muted">Added to Techno Brew: {{ item.timestamp }}</p>
         </div>
       </div>   
     </div> 
+
+    {% endif %}
+
+    {% if context == 'Link' and item.type == 'Link' %}
+    <div class="col">
+      <div class="card {{ item.color }} mb-3 mx-auto h-100" >
+        <div class="card-body">
+          <p class="card-text"><b>Notes:</b> {{ item.note }}</p>
+          <p class="card-text"><b>Link:</b> <a href="{{ game.link }}">{{ item.link }}</a></p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
     {% endfor %}
+
+  
 
   </div> 
 </div>

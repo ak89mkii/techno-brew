@@ -42,14 +42,14 @@ def groups(request):
 @login_required
 def library_index(request):
     not_form = 'not_form'
-    games = Item.objects.filter(user=request.user, wishlist_user=False).order_by('title')
+    items = Item.objects.filter(user=request.user, wishlist_user=False).order_by('label')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = 'Link'
     switches = Theme.objects.filter(user=request.user).order_by('color')
     # References the last Theme entry to change the "background" color id.
     themes = Theme.objects.filter(user=request.user).order_by('color').last()
-    return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes, not_form : 'not_form' })
+    return render(request, 'library/index.html', { 'items' : items, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes, not_form : 'not_form' })
 
 # SECTION MAIN: Sites and Software Tools Reference
 @login_required
@@ -88,18 +88,18 @@ def library_index_03(request):
     themes = Theme.objects.filter(user=request.user).order_by('color').last()
     return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes , not_form : 'not_form'})
 
-# SECTION LISTS: Personal Items
-@login_required
-def library_index(request):
-    not_form = 'not_form'
-    games = Item.objects.filter(user=request.user, wishlist_user=False).order_by('title')
-    l = request.user.groups.values_list('name',flat = True)
-    groups = list(l)
-    context = ['Personal', 'Personal']
-    switches = Theme.objects.filter(user=request.user).order_by('color')
-    # References the last Theme entry to change the "background" color id.
-    themes = Theme.objects.filter(user=request.user).order_by('color').last()
-    return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes, not_form : 'not_form' })
+# # SECTION LISTS: Personal Items
+# @login_required
+# def library_index(request):
+#     not_form = 'not_form'
+#     games = Item.objects.filter(user=request.user, wishlist_user=False).order_by('title')
+#     l = request.user.groups.values_list('name',flat = True)
+#     groups = list(l)
+#     context = ['Personal', 'Personal']
+#     switches = Theme.objects.filter(user=request.user).order_by('color')
+#     # References the last Theme entry to change the "background" color id.
+#     themes = Theme.objects.filter(user=request.user).order_by('color').last()
+#     return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes, not_form : 'not_form' })
     
 @login_required
 def event(request):
@@ -126,7 +126,7 @@ def wishlist_user(request):
     return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes , not_form : 'not_form'})
 
 
-# Game
+# Item
 class ItemCreate(LoginRequiredMixin, CreateView):
     model = Item
     fields = ['label','description', 'image', 'type', 'note', 'color', 'link', 'event', 'wishlist_user', ]
