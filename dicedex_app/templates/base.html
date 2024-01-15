@@ -46,7 +46,7 @@
         {% endif %}
         
         <!-- Navbar ("Lists" Dropdown). -->
-        <a class="nav-link" href="{% url 'groups' %}">Groups</a>
+        <a class="nav-link" href="{% url 'groups' %}">Sections</a>
         <ul class="nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Lists</a>
@@ -64,7 +64,7 @@
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{ user }}</a>
                 <ul class="dropdown-menu dropdown-menu-lg-end">
                     <li><p class="dropdown-item"><b>User Name</b>: {{ user }}</p></li>
-                    <li><p class="dropdown-item"><b>Group(s)</b>: {{ groups }}</p></li>
+                    <li><p class="dropdown-item"><b>Authorized Section(s)</b>: {{ groups }}</p></li>
                     <hr></hr>
                     <li><a class="dropdown-item" href="{% url 'logout' %}"><b>Log Out</b></a></li>
                 </ul>
