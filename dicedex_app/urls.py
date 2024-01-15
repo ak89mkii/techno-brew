@@ -19,7 +19,7 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
 
     # items
-    path('games/create/', views.ItemCreate.as_view(), name='items_create'),
+    path('items/create/', views.ItemCreate.as_view(), name='items_create'),
     path('games/<int:pk>/update/', views.GameUpdate.as_view(), name='games_update'),
     path('games/<int:pk>/delete/', views.GameDelete.as_view(), name='games_delete'),
 
