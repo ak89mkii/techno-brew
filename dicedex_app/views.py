@@ -58,7 +58,7 @@ def library_index_01(request):
     items = Item.objects.filter(type='Tool', wishlist_user=False).order_by('label')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
-    context = 'Sites'
+    context = 'Tools'
     switches = Theme.objects.filter(user=request.user).order_by('color')
     # References the last Theme entry to change the "background" color id.
     themes = Theme.objects.filter(user=request.user).order_by('color').last()
