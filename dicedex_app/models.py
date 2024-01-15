@@ -52,7 +52,7 @@ class Item(models.Model):
     wishlist_user = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.title
+        return self.label
 
     def get_absolute_url(self):
         return reverse('home_logged_in')
