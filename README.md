@@ -44,6 +44,7 @@ https://www.dicedex.io/
 // https://devcenter.heroku.com/articles/django-app-configuration
 #### Information References:
 // https://stackoverflow.com/questions/63782773/how-to-modify-windows-10-path-variable-directly-from-a-python-script
+// https://www.w3schools.com/django/django_add_js_file.php
 // 
 #### Sounds References / Credits:
 #### Fonts / Credits:

@@ -112,8 +112,10 @@
         <div class="card-body">
           <p class="card-text"><b>Description:</b> {{ item.description }}</p>
           <div class="alert alert-dark" role="alert">
-            <p class="card-text"><b>Link:</b> <a href="{{ game.link }}">{{ item.link }}</a></p>
-            <button onclick="myFunction()">Click me!</button>
+            <!-- <p class="card-text"><b>Link:</b> <a href="{{ item.link }}">{{ item.link }}</a></p> -->
+            
+            <input readonly type="text" value="{{ item.link }}" id="link" class="alert alert-primary">
+            <button id="button" type="submit" class="btn btn-primary" onclick="myFunction()">Copy to Clipboard</button>
           </div>
         </div>
       </div>
