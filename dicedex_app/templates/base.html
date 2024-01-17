@@ -52,9 +52,9 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Lists</a>
                 <ul class="dropdown-menu dropdown-menu-end">
-                    <li><a class="dropdown-item" href="{% url 'event' %}"><b><p>Bring to Event</p></b></a></li>
-                    <li><a class="dropdown-item" href="{% url 'library' %}"><b><p>My Personal Collection</p></b></a></li>
-                    <li><a class="dropdown-item" href="{% url 'wishlist_user' %}"><b><p>My Wishlist</p></b></a></li>
+                    <li><a class="dropdown-item" href="{% url 'event' %}"><b><p>Public Supply Wishlist</p></b></a></li><hr>
+                    <li><a class="dropdown-item" href="{% url 'library' %}"><b><p>Favorited - Sites and Software Tools</p></b></a></li><hr>
+                    <li><a class="dropdown-item" href="{% url 'wishlist_user' %}"><b><p>Personal Equipment Tracker</p></b></a></li>
                 </ul>
             </li>
         </ul>
@@ -64,8 +64,8 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{ user }}</a>
                 <ul class="dropdown-menu dropdown-menu-lg-end">
-                    <li><p class="dropdown-item"><b>User Name</b>: {{ user }}</p></li>
-                    <li><p class="dropdown-item"><b>Authorized Section(s)</b>: {{ groups }}</p></li>
+                    <li><p class="dropdown-item"><b>User Name:</b> {{ user }}</p></li>
+                    <li><p class="dropdown-item"><b>Authorized Section(s):</b> {{ groups }}</p></li>
                     <hr></hr>
                     <li><a class="dropdown-item" href="{% url 'logout' %}"><b>Log Out</b></a></li>
                 </ul>
