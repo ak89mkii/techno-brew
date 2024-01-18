@@ -130,6 +130,10 @@ def wishlist_user(request):
 class ItemCreate(LoginRequiredMixin, CreateView):
     model = Item
     fields = ['label','description', 'image', 'type', 'note', 'color', 'link', 'event', 'wishlist_user', ]
+    class Meta:
+        labels = {
+            'label':'GOKU',
+        }
   
     def form_valid(self, form):
         form.instance.user = self.request.user  
