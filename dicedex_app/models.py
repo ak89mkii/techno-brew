@@ -49,7 +49,7 @@ class Item(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     # group = models.ForeignKey(Group, on_delete=models.CASCADE)
     event = models.BooleanField(default=False)
-    wishlist_user = models.BooleanField(default=False)
+    wishlist_user = models.BooleanField(verbose_name='Spock', default=False)
 
     def __str__(self):
         return self.label

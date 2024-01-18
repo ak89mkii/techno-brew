@@ -45,7 +45,9 @@ https://www.dicedex.io/
 #### Information References:
 // https://stackoverflow.com/questions/63782773/how-to-modify-windows-10-path-variable-directly-from-a-python-script
 // https://www.w3schools.com/django/django_add_js_file.php
-// 
+// https://stackoverflow.com/questions/40475938/django-createview-field-labels
+// https://www.w3schools.com/tags/att_input_readonly.asp#:~:text=A%20read%2Donly%20input%20field%20cannot%20be%20modified%20(however%2C,copy%20the%20text%20from%20it)
+// https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
 #### Sounds References / Credits:
 #### Fonts / Credits:
 // https://fonts.google.com/specimen/Press+Start+2P/tester

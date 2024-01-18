@@ -132,7 +132,7 @@ class ItemCreate(LoginRequiredMixin, CreateView):
     fields = ['label','description', 'image', 'type', 'note', 'color', 'link', 'event', 'wishlist_user', ]
     class Meta:
         labels = {
-            'label':'GOKU',
+            'label':('GOKU'),
         }
   
     def form_valid(self, form):
