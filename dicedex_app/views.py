@@ -5,6 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.forms import TextInput
 
 
 # Create your views here.
@@ -130,9 +131,9 @@ def wishlist_user(request):
 class ItemCreate(LoginRequiredMixin, CreateView):
     model = Item
     fields = ['label','description', 'image', 'type', 'note', 'color', 'link', 'favorited',  ]
-    class Meta:
-        labels = {
-            'label':('GOKU'),
+    # class Meta:
+    widgets = {
+            'label': TextInput(attrs={'style': 'width: 300px;'}),
         }
   
     def form_valid(self, form):
