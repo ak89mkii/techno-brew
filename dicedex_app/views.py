@@ -42,7 +42,7 @@ def groups(request):
 @login_required
 def library_index(request):
     not_form = 'not_form'
-    items = Item.objects.filter(user=request.user, wishlist_user=False).order_by('label')
+    items = Item.objects.filter(type='Link').order_by('label')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = 'Link'
@@ -55,7 +55,7 @@ def library_index(request):
 @login_required
 def library_index_01(request):
     not_form = 'not_form'
-    items = Item.objects.filter(type='Tool', wishlist_user=False).order_by('label')
+    items = Item.objects.filter(type='Tool').order_by('label')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = 'Tools'
@@ -129,7 +129,7 @@ def wishlist_user(request):
 # Item
 class ItemCreate(LoginRequiredMixin, CreateView):
     model = Item
-    fields = ['label','description', 'image', 'type', 'note', 'color', 'link', 'event', 'wishlist_user', ]
+    fields = ['label','description', 'image', 'type', 'note', 'color', 'link', 'favorited',  ]
     class Meta:
         labels = {
             'label':('GOKU'),
@@ -141,7 +141,7 @@ class ItemCreate(LoginRequiredMixin, CreateView):
 
 class GameUpdate(LoginRequiredMixin, UpdateView):
     model = Item
-    fields = ['label','description', 'image', 'type', 'note', 'color', 'link', 'event', 'wishlist_user', ]
+    fields = ['label','description', 'image', 'type', 'note', 'color', 'link', 'favorited', ]
 
 class GameDelete(LoginRequiredMixin, DeleteView):
     model = Item

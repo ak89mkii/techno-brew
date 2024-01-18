@@ -6,9 +6,12 @@ from django.contrib.auth.models import User, Group
 # Create your models here.
 
 TYPES = (
+    ('Inventory', 'Inventory'),
     ('Link', 'Link'),
+    ('Tracker', 'Personal Equipment Tracker'),
+    ('Wishlist', 'Public Supply Wishlist'),
     ('Tool', 'Tool'),
-    ('Inventory', 'Inventory')
+
 )
 
 COLORS = (
@@ -30,7 +33,7 @@ CARDS = (
 
 class Item(models.Model):
     label = models.CharField(max_length=100, default="None")
-    description = models.CharField(max_length=1000, default="None")
+    description = models.CharField(verbose_name='Description (Link Share) ', max_length=1000, default="None")
     image = models.CharField(max_length=1000, default="/static/07.png")
     type = models.CharField(
         max_length=30,
@@ -38,7 +41,7 @@ class Item(models.Model):
         default=TYPES[0][0]
     )
     note = models.CharField(max_length=1000, default="None")
-    link = models.CharField(max_length=1000, default="None")
+    link = models.CharField(verbose_name='Link (Link Share)', max_length=1000, default="None")
     color = models.CharField(
         max_length=30,
         choices=CARDS,
@@ -48,8 +51,9 @@ class Item(models.Model):
     # Also for "owner field"
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     # group = models.ForeignKey(Group, on_delete=models.CASCADE)
-    event = models.BooleanField(default=False)
-    wishlist_user = models.BooleanField(verbose_name='Spock', default=False)
+    # event = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)    
+    favorited = models.BooleanField(verbose_name='Favorited', default=False)
+    # wishlist_user = models.BooleanField(verbose_name='Personal Equipment Tracker', default=False)
 
     def __str__(self):
         return self.label
