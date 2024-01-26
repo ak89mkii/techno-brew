@@ -1,14 +1,25 @@
-function myFunction() {
+  // FUNCTION O1: Copies "Link Share" Link to Clipboard
+function myFunction(id) {
   // Get the text field
-  let copyText = document.getElementById("link");
+  let element = document.getElementById("link" + id);
+  console.log(id)
+  console.log(element)
+
+  // let text = element.getAttribute("value");
+  // console.log(text)
 
   // Select the text field
-  copyText.select();
-  copyText.setSelectionRange(0, 99999); // For mobile devices
+  element.select();
+  element.setSelectionRange(0, 99999); // For mobile devices
 
    // Copy the text inside the text field
-  navigator.clipboard.writeText(copyText.value);
+  navigator.clipboard.writeText(element.value);
 
   // Alert the copied text
-  alert("Copied the text: " + copyText.value);
+  alert("Copied the text: " + element.value);
+}
+
+// FUNCTION 02: Still Under Development Message
+function message() { 
+  alert("Under Construction!");
 }
