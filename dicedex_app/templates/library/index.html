@@ -111,12 +111,12 @@
       <div class="card {{ item.color }} mb-3 mx-auto h-100" >
         <div class="card-body">
           <p class="card-text"><b>Description:</b> {{ item.description }}</p>
-          <div class="alert alert-dark" role="alert">
-            <!-- <p class="card-text"><b>Link:</b> <a href="{{ item.link }}">{{ item.link }}</a></p> -->
-            
-            <input readonly type="text" value="{{ item.link }}" id="link{{ item.id }}" class="alert alert-primary">
+          <!-- <div class="alert alert-dark" role="alert"> -->
+          <form>            
+            <textarea rows=4 readonly type="text" value="{{ item.link }}" id="link{{ item.id }}" class="form-control">{{ item.link }}</textarea>
             <button id="button" type="submit" class="btn btn-primary" onclick="myFunction('{{ item.id }}')">Copy to Clipboard</button>
-          </div>
+          </form>
+          <!-- </div> -->
         </div>
       </div>
     </div>
