@@ -35,8 +35,8 @@ SECRET_KEY = os.environ['SECRET_KEY']
 ALLOWED_HOSTS = ["*"]
 
 # Comment out for local development (set to true).
-# DEBUG = False
-DEBUG = True
+DEBUG = False
+# DEBUG = True
 
 # Application definition
 
@@ -86,19 +86,19 @@ WSGI_APPLICATION = 'dicedex.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ['DATABASE_NAME'],
-        'USER': os.environ['USER'],
-        'PASSWORD': os.environ['PASSWORD'],
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': os.environ['DATABASE_NAME'],
+#         'USER': os.environ['USER'],
+#         'PASSWORD': os.environ['PASSWORD'],
+#     }
+# }
 
 # # Comment out for local development.
-# import dj_database_url
+import dj_database_url
 
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 
 # Password validation
