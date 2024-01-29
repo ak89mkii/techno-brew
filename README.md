@@ -50,6 +50,7 @@ https://www.dicedex.io/
 // https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
 // https://stackoverflow.com/questions/70730819/django-i-have-add-onclick-function-into-html-and-whenever-i-click-into-differe
 // https://stackoverflow.com/questions/10845738/django-template-comparing-string
+// https://forum.djangoproject.com/t/deprecation-of-get-method-for-logoutview/25533
 #### Sounds References / Credits:
 #### Fonts / Credits:
 // https://fonts.google.com/specimen/Press+Start+2P/tester
