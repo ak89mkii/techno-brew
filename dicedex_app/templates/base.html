@@ -59,7 +59,7 @@
             </li>
         </ul>
                 
-        <!-- Navbar (User Info Dropedown and Log Out). -->
+        <!-- Navbar (User Info Dropdown and Log Out). -->
         <ul class="nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{ user }}</a>
@@ -67,7 +67,11 @@
                     <li><p class="dropdown-item"><b>User Name:</b> {{ user }}</p></li>
                     <li><p class="dropdown-item"><b>Authorized Section(s):</b> {{ groups }}</p></li>
                     <hr></hr>
-                    <li><a class="dropdown-item" href="{% url 'logout' %}"><b>Log Out</b></a></li>
+                    <!-- <li><a class="dropdown-item" href="{% url 'logout' %}"><b>Log Out</b></a></li> -->
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <li><a class="dropdown-item"><b><button class='btn btn-warning' type="submit">Log Out</button></b></a></li>
+                    </form>                    
                 </ul>
             </li>
         </ul>
