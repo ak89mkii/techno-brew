@@ -49,6 +49,7 @@ https://www.dicedex.io/
 // https://www.w3schools.com/tags/att_input_readonly.asp#:~:text=A%20read%2Donly%20input%20field%20cannot%20be%20modified%20(however%2C,copy%20the%20text%20from%20it)
 // https://www.w3schools.com/howto/howto_js_copy_clipboard.asp
 // https://stackoverflow.com/questions/70730819/django-i-have-add-onclick-function-into-html-and-whenever-i-click-into-differe
+// https://stackoverflow.com/questions/10845738/django-template-comparing-string
 #### Sounds References / Credits:
 #### Fonts / Credits:
 // https://fonts.google.com/specimen/Press+Start+2P/tester
