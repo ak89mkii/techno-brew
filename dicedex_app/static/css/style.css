@@ -2,21 +2,21 @@
 
 #menu {
     background-color: #08f9a0;
-    font-size: 50px;
+    font-size: 30px;
     font-weight: 800;
     /* font-family: 'Nanum Brush Script', cursive; */
 }
 
 @media screen and (min-width: 767px) {
     #menu {
-        font-size: 30px;
+        font-size: 50px;
 
     }
 }
 
 @media screen and (min-width: 1400px) {
     #menu {
-        font-size: 30px;
+        font-size: 50px;
 
     }
 }
