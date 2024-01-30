@@ -114,6 +114,10 @@ body {
     font-size: 17px;
 }
 
+#cardBtn {
+    font-size: 17px;
+}
+
 @media screen and (min-width: 767px) {
     .btn {
         font-size: 30px;

@@ -88,14 +88,14 @@
           
           {% if item.user == user %}
             {% if item.color != 'text-white bg-dark' %}
-            <a href="{% url 'games_update' item.id %}" class="btn btn-dark">Edit</a>
+            <a href="{% url 'games_update' item.id %}" id="cardBtn" class="btn btn-dark">Edit</a>
             {% else %}
-            <a href="{% url 'games_update' item.id %}" class="btn btn-light">Edit</a>
+            <a href="{% url 'games_update' item.id %}" id="cardBtn" class="btn btn-light">Edit</a>
             {% endif %} 
             {% if item.color != 'border-dark bg-warning' %}
-            <a href="{% url 'games_delete' item.id %}" class="btn btn-warning">Delete</a>
+            <a href="{% url 'games_delete' item.id %}" id="cardBtn" class="btn btn-warning">Delete</a>
             {% else %}
-            <a href="{% url 'games_delete' item.id %}" class="btn btn-danger">Delete</a>
+            <a href="{% url 'games_delete' item.id %}" id="cardBtn" class="btn btn-danger">Delete</a>
             {% endif %} 
           {% endif %}
         </div>
