@@ -70,7 +70,7 @@
                     <!-- <li><a class="dropdown-item" href="{% url 'logout' %}"><b>Log Out</b></a></li> -->
                     <form method="post" action="{% url 'logout' %}">
                         {% csrf_token %}
-                        <li><a class="dropdown-item"><b><button class='btn btn-warning' type="submit">Log Out</button></b></a></li>
+                        <li><a class="dropdown-item"><b><button id="cardBtn" class='btn btn-warning' type="submit">Log Out</button></b></a></li>
                     </form>                    
                 </ul>
             </li>
