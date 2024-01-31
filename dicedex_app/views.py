@@ -131,9 +131,11 @@ def wishlist_user(request):
 class ItemCreate(LoginRequiredMixin, CreateView):
     model = Item
     fields = ['label','description', 'image', 'type', 'note', 'color', 'link', 'favorited',  ]
-    success_url = '/library'
+    if type == 'Tool':
+        success_url = '/library_01'
+    elif type =='Link':     
+        success_url ='/library'
 
-  
     def form_valid(self, form):
         form.instance.user = self.request.user  
         return super().form_valid(form)
