@@ -131,10 +131,8 @@ def wishlist_user(request):
 class ItemCreate(LoginRequiredMixin, CreateView):
     model = Item
     fields = ['label','description', 'image', 'type', 'note', 'color', 'link', 'favorited',  ]
-    # class Meta:
-    widgets = {
-            'label': TextInput(attrs={'style': 'width: 300px;'}),
-        }
+    success_url = '/library'
+
   
     def form_valid(self, form):
         form.instance.user = self.request.user  
