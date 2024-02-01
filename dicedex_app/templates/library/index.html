@@ -108,16 +108,18 @@
     </div> 
 
     {% endif %}
+    {% endfor %}
 
-    {% if context == 'Link' and item.type == 'Link' %}
+    {% for link in links %}
+    {% if context == 'Link' %}
     <div class="col">
-      <div class="card {{ item.color }} mb-3 mx-auto h-100" >
+      <div class="card {{ link.color }} mb-3 mx-auto h-100" >
         <div class="card-body">
-          <p class="card-text"><b>Description:</b> {{ item.description }}</p>
+          <p class="card-text"><b>Description:</b> {{ link.description }}</p>
           <!-- <div class="alert alert-dark" role="alert"> -->
           <form>            
-            <textarea rows=4 readonly type="text" value="{{ item.link }}" id="link{{ item.id }}" class="form-control">{{ item.link }}</textarea>
-            <button id="button" type="submit" class="btn btn-primary" onclick="myFunction('{{ item.id }}')">Copy to Clipboard</button>
+            <textarea rows=4 readonly type="text" value="{{ link.link }}" id="link{{ link.id }}" class="form-control">{{ link.link }}</textarea>
+            <button id="button" type="submit" class="btn btn-primary" onclick="myFunction('{{ link.id }}')">Copy to Clipboard</button>
           </form>
           <!-- </div> -->
         </div>
@@ -125,6 +127,7 @@
     </div>
     {% endif %}
     {% endfor %}
+
 
   
 

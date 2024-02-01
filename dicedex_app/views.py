@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Item, Theme
+from .models import Item, Link, Theme
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -39,20 +39,20 @@ def groups(request):
     themes = Theme.objects.filter(user=request.user).order_by('color').last()
     return render(request, 'groups.html', { 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes, not_form : 'not_form' })
 
-# SECTION MAIN: Link Share
+# SECTION MAIN: Link Share (Link)
 @login_required
 def library_index(request):
     not_form = 'not_form'
-    items = Item.objects.filter(type='Link').order_by('label')
+    links = Link.objects.filter(type='Link').order_by('label')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = 'Link'
-    switches = Theme.objects.filter(user=request.user).order_by('color')
+    switches = Link.objects.filter(user=request.user).order_by('color')
     # References the last Theme entry to change the "background" color id.
-    themes = Theme.objects.filter(user=request.user).order_by('color').last()
-    return render(request, 'library/index.html', { 'items' : items, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes, not_form : 'not_form' })
+    themes = Link.objects.filter(user=request.user).order_by('color').last()
+    return render(request, 'library/index.html', { 'links' : links, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes, not_form : 'not_form' })
 
-# SECTION MAIN: Sites and Software Tools Reference
+# SECTION MAIN: Sites and Software Tools Reference (Item)
 @login_required
 def library_index_01(request):
     not_form = 'not_form'
@@ -131,7 +131,7 @@ def wishlist_user(request):
 class ItemCreate(LoginRequiredMixin, CreateView):
     model = Item
     fields = ['label','description', 'image', 'type', 'note', 'color', 'link', 'favorited',  ]
-    success_url = '/groups'
+    success_url = '/library_01'
 
     def form_valid(self, form):
         form.instance.user = self.request.user  
@@ -140,10 +140,31 @@ class ItemCreate(LoginRequiredMixin, CreateView):
 class GameUpdate(LoginRequiredMixin, UpdateView):
     model = Item
     fields = ['label','description', 'image', 'type', 'note', 'color', 'link', 'favorited', ]
+    success_url = '/library_01'
 
 class GameDelete(LoginRequiredMixin, DeleteView):
     model = Item
-    success_url = '/home_logged_in'
+    success_url = '/library_01'
+
+
+# Link
+class LinkCreate(LoginRequiredMixin, CreateView):
+    model = Link
+    fields = ['description', 'color', 'link', 'favorited',  ]
+    success_url = '/library'
+
+    def form_valid(self, form):
+        form.instance.user = self.request.user  
+        return super().form_valid(form)
+
+class LinkUpdate(LoginRequiredMixin, UpdateView):
+    model = Link
+    fields = ['description', 'color', 'link', 'favorited',  ]
+    success_url = '/library'
+
+class LinkDelete(LoginRequiredMixin, DeleteView):
+    model = Link
+    success_url = '/library'
 
 
 # Theme
