@@ -150,7 +150,7 @@ class GameDelete(LoginRequiredMixin, DeleteView):
 # Link
 class LinkCreate(LoginRequiredMixin, CreateView):
     model = Link
-    fields = ['description', 'color', 'link', 'favorited',  ]
+    fields = ['description', 'color', 'link',  ]
     success_url = '/library'
 
     def form_valid(self, form):
@@ -159,7 +159,7 @@ class LinkCreate(LoginRequiredMixin, CreateView):
 
 class LinkUpdate(LoginRequiredMixin, UpdateView):
     model = Link
-    fields = ['description', 'color', 'link', 'favorited',  ]
+    fields = ['description', 'color', 'link',  ]
     success_url = '/library'
 
 class LinkDelete(LoginRequiredMixin, DeleteView):
