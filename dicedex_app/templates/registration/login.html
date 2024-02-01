@@ -24,7 +24,7 @@
           <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" class="btn btn-warning" value="Login">
+            <input type="submit" id='cardBtn' class="btn btn-warning" value="Login">
           </form>
           <br>
         </div>
