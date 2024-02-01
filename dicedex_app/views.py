@@ -43,7 +43,7 @@ def groups(request):
 @login_required
 def library_index(request):
     not_form = 'not_form'
-    links = Link.objects.filter(type='Link').order_by('label')
+    links = Link.objects.order_by('label')
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = 'Link'
