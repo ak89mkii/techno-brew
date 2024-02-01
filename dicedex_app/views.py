@@ -47,9 +47,9 @@ def library_index(request):
     l = request.user.groups.values_list('name',flat = True)
     groups = list(l)
     context = 'Link'
-    switches = Link.objects.filter(user=request.user).order_by('color')
+    switches = Theme.objects.filter(user=request.user).order_by('color')
     # References the last Theme entry to change the "background" color id.
-    themes = Link.objects.filter(user=request.user).order_by('color').last()
+    themes = Theme.objects.filter(user=request.user).order_by('color').last()
     return render(request, 'library/index.html', { 'links' : links, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes, not_form : 'not_form' })
 
 # SECTION MAIN: Sites and Software Tools Reference (Item)
