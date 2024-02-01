@@ -19,9 +19,9 @@ urlpatterns = [
     path('accounts/signup/', views.signup, name='signup'),
 
     # link
-    path('links/create/', views.ItemCreate.as_view(), name='links_create'),
-    path('links/<int:pk>/update/', views.GameUpdate.as_view(), name='links_update'),
-    path('links/<int:pk>/delete/', views.GameDelete.as_view(), name='links_delete'),
+    path('links/create/', views.LinkCreate.as_view(), name='links_create'),
+    path('links/<int:pk>/update/', views.LinkUpdate.as_view(), name='links_update'),
+    path('links/<int:pk>/delete/', views.LinkDelete.as_view(), name='links_delete'),
 
      # items
     path('items/create/', views.ItemCreate.as_view(), name='items_create'),
