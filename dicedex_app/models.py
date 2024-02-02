@@ -63,11 +63,11 @@ class Link(models.Model):
     # Also for "owner field"
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    def __str__(self):
-        return self.label
+    # def __str__(self):
+    #     return self.label
 
-    def get_absolute_url(self):
-        return reverse('home_logged_in')
+    # def get_absolute_url(self):
+    #     return reverse('home_logged_in')
 
 
 class Item(models.Model):
