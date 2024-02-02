@@ -94,6 +94,7 @@ class Item(models.Model):
     favorited = models.BooleanField(verbose_name='Favorited', default=False)
     # wishlist_user = models.BooleanField(verbose_name='Personal Equipment Tracker', default=False)
 
+    # This changes the displayed text of the objects in Django admin to the declared field (label).
     def __str__(self):
         return self.label
 

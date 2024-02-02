@@ -51,6 +51,7 @@ https://www.dicedex.io/
 // https://stackoverflow.com/questions/70730819/django-i-have-add-onclick-function-into-html-and-whenever-i-click-into-differe
 // https://stackoverflow.com/questions/10845738/django-template-comparing-string
 // https://forum.djangoproject.com/t/deprecation-of-get-method-for-logoutview/25533
+// https://www.digitalocean.com/community/tutorials/python-str-repr-functions
 #### Sounds References / Credits:
 #### Fonts / Credits:
 // https://fonts.google.com/specimen/Press+Start+2P/tester
