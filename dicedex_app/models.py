@@ -51,6 +51,10 @@ class Link(models.Model):
         return reverse('home_logged_in')
 
 
+class Gundam(models.Model):
+    label = models.CharField(max_length=100, default="None")
+
+
 class Item(models.Model):
     label = models.CharField(max_length=100, default="None")
     description = models.CharField(verbose_name='Description (Link Share) ', max_length=1000, default="None")

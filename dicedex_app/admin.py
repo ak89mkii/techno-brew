@@ -1,8 +1,11 @@
 from django.contrib import admin
 
-from .models import Link, Item, Theme
+from .models import Link, Item, Theme, Gundam
 
 # Register your models here.
 admin.site.register(Link)
 admin.site.register(Item)
 admin.site.register(Theme)
+
+admin.site.register(Gundam)
+
