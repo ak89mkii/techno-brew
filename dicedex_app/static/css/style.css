@@ -77,6 +77,10 @@ body {
     height: 100px;
 }
 
+#cardImage {
+    height: 50vw;
+}
+
 .card-img-top {
     /* margin: 2px; */
     width: 100%;
