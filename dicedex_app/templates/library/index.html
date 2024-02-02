@@ -125,6 +125,7 @@
             <textarea rows=4 readonly type="text" value="{{ link.link }}" id="link{{ link.id }}" class="form-control">{{ link.link }}</textarea>
             <button id="button" type="submit" class="btn btn-primary" onclick="myFunction('{{ link.id }}')">Copy to Clipboard</button>
           </form>
+          <a href="{% url 'links_delete' link.id %}" id="cardBtn" class="btn btn-warning">Delete</a>
           <!-- </div> -->
         </div>
       </div>
