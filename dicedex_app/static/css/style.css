@@ -73,13 +73,13 @@ body {
     border-style: solid;
     border-color: black;
     border-width: 100px;
-    width: auto;
+    width: 10vw;
     height: 100px;
 }
 
 #cardImage {
     height: 10vw;
-    width: 80%;
+    width: auto;
     display:block;
     margin:auto;
 }
