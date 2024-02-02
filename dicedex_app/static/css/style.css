@@ -80,6 +80,8 @@ body {
 #cardImage {
     height: 10vw;
     width: 80%;
+    display:block;
+    margin:auto;
 }
 
 .card-img-top {
