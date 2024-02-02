@@ -42,7 +42,7 @@ class Link(models.Model):
     )
     timestamp = models.DateField(auto_now_add=True)
     # Also for "owner field"
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.label
