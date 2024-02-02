@@ -33,8 +33,8 @@ CARDS = (
 
 
 class Link(models.Model):
-    description = models.CharField(verbose_name='Description (Link Share) ', max_length=1000, default="None")
-    link = models.CharField(verbose_name='Link (Link Share)', max_length=1000, default="None")
+    # description = models.CharField(verbose_name='Description', max_length=1000, default="None")
+    # link = models.CharField(verbose_name='Link', max_length=1000, default="None")
     color = models.CharField(
         max_length=30,
         choices=CARDS,
@@ -42,7 +42,7 @@ class Link(models.Model):
     )
     timestamp = models.DateField(auto_now_add=True)
     # Also for "owner field"
-    # user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.label
