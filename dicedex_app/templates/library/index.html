@@ -88,7 +88,7 @@
           <hr>
           <p class="card-text"><b>Type:</b> {{ item.type }}</p>
           <p class="card-text"><b>Notes:</b> {{ item.note }}</p>
-          <p class="card-text"><b>Link:</b> <a href="{{ game.link }}">{{ item.link }}</a></p>
+          <p class="card-text"><b>Link:</b> <a href="{{ item.link }}">{{ item.link }}</a></p>
           
           {% if item.user == user %}
             {% if item.color != 'text-white bg-dark' %}
