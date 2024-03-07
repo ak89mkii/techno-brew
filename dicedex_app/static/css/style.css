@@ -79,7 +79,7 @@ body {
 
 #cardImage {
     max-height: 10vw;
-    max-width: 90vw;
+    max-width: 90%;
     height: auto;
     width: auto;
     display:block;
