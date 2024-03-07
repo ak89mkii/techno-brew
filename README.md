@@ -52,6 +52,7 @@ https://www.dicedex.io/
 // https://stackoverflow.com/questions/10845738/django-template-comparing-string
 // https://forum.djangoproject.com/t/deprecation-of-get-method-for-logoutview/25533
 // https://www.digitalocean.com/community/tutorials/python-str-repr-functions
+// https://stackoverflow.com/questions/12991351/how-to-force-image-resize-and-keep-aspect-ratio
 #### Sounds References / Credits:
 #### Fonts / Credits:
 // https://fonts.google.com/specimen/Press+Start+2P/tester
