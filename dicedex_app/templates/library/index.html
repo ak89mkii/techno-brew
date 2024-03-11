@@ -52,7 +52,7 @@
 <!-- Add Button -->
 <!-- <container> -->
   {% if context.1 != 'Event' %}
-    {% if request.user.username == 'Client_01' %}
+    {% if request.user.username == 'link' %}
     {% elif context == 'Tools' %}
     <div class="d-grid gap-2 col-5 mx-auto">
       <a href="{% url 'items_create' %}" class="btn btn-primary btn-lg">Add a New Item</a>
