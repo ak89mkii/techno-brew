@@ -125,19 +125,21 @@
             <textarea rows=4 readonly type="text" value="{{ link.link }}" id="link{{ link.id }}" class="form-control">{{ link.link }}</textarea>
             <button id="button" type="submit" class="btn btn-primary" onclick="myFunction('{{ link.id }}')">Copy to Clipboard</button>
           </form>
+          
           {% if item.user == user %}
-          {% if item.color != 'text-white bg-dark' %}
-          <a href="{% url 'links_update' link.id %}" id="cardBtn" class="btn btn-dark">Edit</a>
-          {% else %}
-          <a href="{% url 'links_update' link.id %}" id="cardBtn" class="btn btn-light">Edit</a>
-          {% endif %} 
-          {% if item.color != 'border-dark bg-warning' %}
-          <a href="{% url 'links_delete' link.id %}" id="cardBtn" class="btn btn-warning">Delete</a>
-          {% else %}
-          <a href="{% url 'links_delete' link.id %}" id="cardBtn" class="btn btn-danger">Delete</a>
-          {% endif %} 
-          {% endif %}          <!-- </div> -->
-        </div>
+            {% if item.color != 'text-white bg-dark' %}
+            <a href="{% url 'links_update' link.id %}" id="cardBtn" class="btn btn-dark">Edit</a>
+            {% else %}
+            <a href="{% url 'links_update' link.id %}" id="cardBtn" class="btn btn-light">Edit</a>
+            {% endif %} 
+            {% if item.color != 'border-dark bg-warning' %}
+            <a href="{% url 'links_delete' link.id %}" id="cardBtn" class="btn btn-warning">Delete</a>
+            {% else %}
+            <a href="{% url 'links_delete' link.id %}" id="cardBtn" class="btn btn-danger">Delete</a>
+            {% endif %} 
+          {% endif %}
+          
+        <div>
       </div>
     </div>
     {% endif %}
