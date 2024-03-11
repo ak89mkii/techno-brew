@@ -126,13 +126,13 @@
             <button id="button" type="submit" class="btn btn-primary" onclick="myFunction('{{ link.id }}')">Copy to Clipboard</button>
           </form>
 
-          {% if item.user == user %}
-            {% if item.color != 'text-white bg-dark' %}
+          {% if link.user == user %}
+            {% if link.color != 'text-white bg-dark' %}
             <a href="{% url 'links_update' link.id %}" id="cardBtn" class="btn btn-dark">Edit</a>
             {% else %}
             <a href="{% url 'links_update' link.id %}" id="cardBtn" class="btn btn-light">Edit</a>
             {% endif %} 
-            {% if item.color != 'border-dark bg-warning' %}
+            {% if link.color != 'border-dark bg-warning' %}
             <a href="{% url 'links_delete' link.id %}" id="cardBtn" class="btn btn-warning">Delete</a>
             {% else %}
             <a href="{% url 'links_delete' link.id %}" id="cardBtn" class="btn btn-danger">Delete</a>
