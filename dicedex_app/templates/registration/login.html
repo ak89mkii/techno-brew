@@ -20,7 +20,7 @@
 <div class="container">
     <div class="card mb-3">
         <!-- <img src="https://64.media.tumblr.com/25380ab4f56d1b41807ef8b4a90fbc7c/7e2db8e592aa4a90-6e/s1280x1920/62fa368cca062685a0520c00cbec22bb5a3c1093.gif" class="card-img-top" alt="..."> -->
-        <img src="https://i.pinimg.com/originals/b6/bd/de/b6bddea4ccb7ce783a32e86c379ddf53.gif" class="card-img-top" alt="...">
+        <img src="{% static 'login.gif' %}" class="card-img-top" alt="...">
         <div class="card-body">
           <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
