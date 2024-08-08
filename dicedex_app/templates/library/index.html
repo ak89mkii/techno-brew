@@ -52,21 +52,32 @@
 <!-- Add Button -->
 <!-- <container> -->
   {% if context.1 != 'Event' %}
-    {% if request.user.username != 'tech_01' %}
-    {% elif request.user.username != 'tech_na' %}
-    {% elif context == 'Tools' %}
-    <div class="d-grid gap-2 col-5 mx-auto">
-      <a href="{% url 'items_create' %}" class="btn btn-primary btn-lg">Add a New Item</a>
-    </div>
-    {% elif context == 'Link' %}
-    <div class="d-grid gap-2 col-5 mx-auto">
-      <a href="{% url 'links_create' %}" class="btn btn-primary btn-lg">Add a New Link</a>
+    {% if request.user.username == 'tech_01' %}
+      {% if context == 'Tools' %}
+      <div class="d-grid gap-2 col-5 mx-auto">
+        <a href="{% url 'items_create' %}" class="btn btn-primary btn-lg">Add a New Item</a>
+      </div>
+      {% elif context == 'Link' %}
+      <div class="d-grid gap-2 col-5 mx-auto">
+        <a href="{% url 'links_create' %}" class="btn btn-primary btn-lg">Add a New Link</a>
+      </div>
+      {% endif %}
+    {% endif %}
+
+    {% if request.user.username == 'tech_na' %}
+      {% if context == 'Tools' %}
+      {% elif context == 'Link' %}
+      <div class="d-grid gap-2 col-5 mx-auto">
+        <a href="{% url 'links_create' %}" class="btn btn-primary btn-lg">Add a New Link</a>
+      </div>
+      {% endif %}
+    {% endif %}
+
+    {% elif context.1 == 'Event' %}
+    <div class="d-grid gap-2 col-2 mx-auto">
+      <a href="{% url 'library' %}" class="btn btn-primary btn-lg">Back to Library</a>
     </div>
     {% endif %}
-  {% elif context.1 == 'Event' %}
-  <div class="d-grid gap-2 col-2 mx-auto">
-    <a href="{% url 'library' %}" class="btn btn-primary btn-lg">Back to Library</a>
-  </div>
   {% endif %}
 
 <!-- </container> -->
