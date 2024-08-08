@@ -53,7 +53,7 @@
 <!-- <container> -->
   {% if context.1 != 'Event' %}
     <!-- {% if request.user.username == 'link' or request.user.username == 'tech_na' %} -->
-    {% if request.user.username not in ['tech_01', 'tech_na'] %}
+    {% if request.user.username in ['tech_01', 'tech_na'] %}
     <h1>Hadoken!</h1>
     {% elif context == 'Tools' %}
     <div class="d-grid gap-2 col-5 mx-auto">
