@@ -64,7 +64,7 @@
       {% endif %}
     {% endif %}
 
-    {% if request.user.username == 'tech_na' %}
+    {% elif request.user.username == 'tech_na' %}
       {% if context == 'Tools' %}
       {% elif context == 'Link' %}
       <div class="d-grid gap-2 col-5 mx-auto">
