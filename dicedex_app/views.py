@@ -100,7 +100,7 @@ def library_demo(request):
     switches = Theme.objects.filter(user=request.user).order_by('color')
     # References the last Theme entry to change the "background" color id.
     themes = Theme.objects.filter(user=request.user).order_by('color').last()
-    return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes , not_form : 'not_form'})
+    return render(request, 'library/demo.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes , not_form : 'not_form'})
 
 # # SECTION LISTS: Personal Items
 # @login_required
