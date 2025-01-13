@@ -2,6 +2,10 @@
     padding: 10px;
 }
 
+.row {
+    margin: 10px;
+}
+
 #title {
     background-color: #f47d7d;
     font-size: 30px;
