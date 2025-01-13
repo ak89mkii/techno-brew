@@ -91,7 +91,7 @@ def library_index_03(request):
 
 # SECTION MAIN: TDI Demo "Membership Page"
 @login_required
-def library_index_demo(request):
+def library_demo(request):
     not_form = 'not_form'
     games = Item.objects.filter(gundam_group=True, wishlist_user=False).order_by('title')
     l = request.user.groups.values_list('name',flat = True)
