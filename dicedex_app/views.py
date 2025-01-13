@@ -93,14 +93,7 @@ def library_index_03(request):
 @login_required
 def library_demo(request):
     not_form = 'not_form'
-    games = Item.objects.filter(gundam_group=True, wishlist_user=False).order_by('title')
-    l = request.user.groups.values_list('name',flat = True)
-    groups = list(l)
-    context = 'Gundam'
-    switches = Theme.objects.filter(user=request.user).order_by('color')
-    # References the last Theme entry to change the "background" color id.
-    themes = Theme.objects.filter(user=request.user).order_by('color').last()
-    return render(request, 'library/demo.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes , not_form : 'not_form'})
+    return render(request, 'library/demo.html', { 'not_form' : not_form, 'context' : context })   
 
 # # SECTION LISTS: Personal Items
 # @login_required
