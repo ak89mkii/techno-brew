@@ -93,7 +93,7 @@ def library_index_03(request):
 @login_required
 def library_demo(request):
     not_form = 'not_form'
-    return render(request, 'library/demo.html', { 'not_form' : not_form, 'context' : context })   
+    return render(request, 'library/demo.html', { 'not_form' : not_form })   
 
 # # SECTION LISTS: Personal Items
 # @login_required
