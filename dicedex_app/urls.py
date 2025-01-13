@@ -14,6 +14,7 @@ urlpatterns = [
     path('library_01/', views.library_index_01, name='library_01'),
     path('library_02/', views.library_index_02, name='library_02'),
     path('library_03/', views.library_index_03, name='library_03'),
+    path('library_demo/', views.library_index_03, name='library_demo'),
 
     # signup
     path('accounts/signup/', views.signup, name='signup'),

@@ -89,6 +89,19 @@ def library_index_03(request):
     themes = Theme.objects.filter(user=request.user).order_by('color').last()
     return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes , not_form : 'not_form'})
 
+# SECTION MAIN: TDI Demo "Membership Page"
+@login_required
+def library_index_demo(request):
+    not_form = 'not_form'
+    games = Item.objects.filter(gundam_group=True, wishlist_user=False).order_by('title')
+    l = request.user.groups.values_list('name',flat = True)
+    groups = list(l)
+    context = 'Gundam'
+    switches = Theme.objects.filter(user=request.user).order_by('color')
+    # References the last Theme entry to change the "background" color id.
+    themes = Theme.objects.filter(user=request.user).order_by('color').last()
+    return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes , not_form : 'not_form'})
+
 # # SECTION LISTS: Personal Items
 # @login_required
 # def library_index(request):
