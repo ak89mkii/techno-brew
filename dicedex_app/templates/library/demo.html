@@ -207,20 +207,21 @@
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Member Status:</div>
-        <!-- Example split danger button -->
-<div class="btn-group">
-  <button type="button" class="btn btn-danger">Action</button>
-  <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-    <span class="visually-hidden">Toggle Dropdown</span>
-  </button>
-  <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
-    <li><a class="dropdown-item" href="#">Another action</a></li>
-    <li><a class="dropdown-item" href="#">Something else here</a></li>
-    <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Separated link</a></li>
-  </ul>
-</div>    
+        <ul class="nav">
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">{{ user }}</a>
+              <ul class="dropdown-menu dropdown-menu-lg-end">
+                  <li><p class="dropdown-item"><b>User Name:</b> {{ user }}</p></li>
+                  <li><p class="dropdown-item"><b>Authorized Section(s):</b> {{ groups }}</p></li>
+                  <hr></hr>
+                  <!-- <li><a class="dropdown-item" href="{% url 'logout' %}"><b>Log Out</b></a></li> -->
+                  <form method="post" action="{% url 'logout' %}">
+                      {% csrf_token %}
+                      <li><a class="dropdown-item"><b><button id="cardBtn" class='btn btn-warning' type="submit">Log Out</button></b></a></li>
+                  </form>                    
+              </ul>
+          </li>
+      </ul>    
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
