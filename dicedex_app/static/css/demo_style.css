@@ -6,6 +6,10 @@
     margin: 10px;
 } */
 
+h1 {
+    text-align: center;
+}
+
 #title {
     background-color: #f47d7d;
     font-size: 30px;
@@ -58,14 +62,14 @@
 
 @media screen and (min-width: 767px) {
     .btn {
-        font-size: 25px;
+        font-size: 10px;
 
     }
 }
 
 @media screen and (min-width: 1400px) {
     .btn {
-        font-size: 25px;
+        font-size: 10px;
 
     }
 }
