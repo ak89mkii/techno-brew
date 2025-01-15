@@ -5,7 +5,7 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.forms import TextInput
+from .forms import SearchForm
 
 
 # Create your views here.
@@ -91,9 +91,27 @@ def library_index_03(request):
 
 # SECTION MAIN: TDI Demo "Membership Page"
 @login_required
+# def library_demo(request):
+#     not_form = 'not_form'
+#     return render(request, 'library/demo.html', { 'not_form' : not_form })   
+
 def library_demo(request):
-    not_form = 'not_form'
-    return render(request, 'library/demo.html', { 'not_form' : not_form })   
+    results = None
+    form = SearchForm(request.GET or None)  # Use GET for the search form
+
+    if form.is_valid():
+        search_type = form.cleaned_data['search_type']
+        query = form.cleaned_data['query']
+
+        # Filter the results based on search type
+        if search_type == 'title':
+            results = MyModel.objects.filter(title__icontains=query)
+        elif search_type == 'author':
+            results = MyModel.objects.filter(author__icontains=query)
+        elif search_type == 'content':
+            results = MyModel.objects.filter(content__icontains=query)
+
+    return render(request, 'search.html', {'form': form, 'results': results})
 
 # # SECTION LISTS: Personal Items
 # @login_required
