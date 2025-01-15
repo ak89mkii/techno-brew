@@ -105,11 +105,11 @@ def library_demo(request):
 
         # Filter the results based on search type
         if search_type == 'title':
-            results = MyModel.objects.filter(title__icontains=query)
+            results = Item.objects.filter(label__icontains=query)
         elif search_type == 'author':
-            results = MyModel.objects.filter(author__icontains=query)
+            results = Item.objects.filter(type__icontains=query)
         elif search_type == 'content':
-            results = MyModel.objects.filter(content__icontains=query)
+            results = Item.objects.filter(color__icontains=query)
 
     return render(request, 'search.html', {'form': form, 'results': results})
 
