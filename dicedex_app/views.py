@@ -89,12 +89,14 @@ def library_index_03(request):
     themes = Theme.objects.filter(user=request.user).order_by('color').last()
     return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes , not_form : 'not_form'})
 
-# SECTION MAIN: TDI Demo "Membership Page"
+# SECTION MAIN: TDI Demo "Membership Page Search Results"
 @login_required
-# def library_demo(request):
-#     not_form = 'not_form'
-#     return render(request, 'library/demo.html', { 'not_form' : not_form })   
+# def detail_view(request, pk):
+#     result = get_object_or_404(MyModel, pk=pk)
+#     return render(request, 'demo.html', {'result': result})
 
+# SECTION MAIN: TDI Demo "Membership Search Page"
+@login_required
 def library_demo_search(request):
     results = None
     form = SearchForm(request.GET or None)  # Use GET for the search form

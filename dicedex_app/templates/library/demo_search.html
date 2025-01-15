@@ -35,7 +35,9 @@
         <h2>Results:</h2>
         <ul>
             {% for result in results %}
+            <a href="{% url 'detail' result.pk %}"></a>
                 <li>{{ result }}</li> <!-- Customize how results are displayed -->
+            </a>
             {% endfor %}
         </ul>
     {% elif form.is_bound %}
