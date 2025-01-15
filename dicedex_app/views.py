@@ -95,7 +95,7 @@ def library_index_03(request):
 #     not_form = 'not_form'
 #     return render(request, 'library/demo.html', { 'not_form' : not_form })   
 
-def library_demo(request):
+def library_demo_search(request):
     results = None
     form = SearchForm(request.GET or None)  # Use GET for the search form
 
