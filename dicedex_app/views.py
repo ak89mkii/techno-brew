@@ -111,7 +111,7 @@ def library_demo(request):
         elif search_type == 'color':
             results = Item.objects.filter(color__icontains=query)
 
-    return render(request, 'search.html', {'form': form, 'results': results})
+    return render(request, 'demo.html', {'form': form, 'results': results})
 
 # # SECTION LISTS: Personal Items
 # @login_required
