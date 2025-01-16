@@ -93,7 +93,7 @@ def library_index_03(request):
 @login_required
 def library_index_demo(request):
     # results = None
-    return render(request, 'library/index.html', {})
+    return render(request, 'library/demo.html', {})
 
 # @login_required
 # def detail_view(request, pk):
