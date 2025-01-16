@@ -90,6 +90,11 @@ def library_index_03(request):
     return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes , not_form : 'not_form'})
 
 # SECTION MAIN: TDI Demo "Membership Page Search Results"
+@login_required
+def library_index_demo(request):
+    results = None
+    return render(request, 'library/demo.html', {})
+
 # @login_required
 # def detail_view(request, pk):
 #     result = get_object_or_404(MyModel, pk=pk)
@@ -97,7 +102,7 @@ def library_index_03(request):
 
 # SECTION MAIN: TDI Demo "Membership Search Page"
 @login_required
-def library_demo_search(request):
+def library_index_demo_search(request):
     results = None
     form = SearchForm(request.GET or None)  # Use GET for the search form
 
