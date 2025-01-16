@@ -26,9 +26,10 @@
 </div>
 <br>
 
+<div class="container"></div>
     <form method="get" action="">
         {{ form.as_p }}
-        <button type="submit">Search</button>
+        <button type="submit" class="btn btn-primary">Search</button>
     </form>
 
     {% if results %}
@@ -41,6 +42,7 @@
     {% elif form.is_bound %}
         <p>No results found.</p>
     {% endif %}
+</div>
 </body>
 </html>
 {% endblock %}
