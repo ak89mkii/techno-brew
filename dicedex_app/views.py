@@ -92,8 +92,8 @@ def library_index_03(request):
 # SECTION MAIN: TDI Demo "Membership Page Search Results"
 @login_required
 def library_index_demo(request):
-    results = None
-    return render(request, 'library/demo.html', {})
+    # results = None
+    return render(request, 'library/index.html', {})
 
 # @login_required
 # def detail_view(request, pk):
