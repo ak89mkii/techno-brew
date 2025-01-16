@@ -90,7 +90,7 @@ def library_index_03(request):
     return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes , not_form : 'not_form'})
 
 # SECTION MAIN: TDI Demo "Membership Page Search Results"
-@login_required
+# @login_required
 # def detail_view(request, pk):
 #     result = get_object_or_404(MyModel, pk=pk)
 #     return render(request, 'demo.html', {'result': result})
