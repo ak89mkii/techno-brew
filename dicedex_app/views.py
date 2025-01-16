@@ -102,7 +102,7 @@ def library_index_demo(request):
 
 # SECTION MAIN: TDI Demo "Membership Search Page"
 @login_required
-def library_index_demo_search(request):
+def library_demo_search(request):
     results = None
     form = SearchForm(request.GET or None)  # Use GET for the search form
 
