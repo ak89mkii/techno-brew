@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
-from .models import Item, Link, Theme
+from .models import Item, Link, Theme, Member, Dog, Facility
 from django.contrib.auth import login
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.decorators import login_required
@@ -112,11 +112,11 @@ def library_index_demo_search(request):
 
         # Filter the results based on search type
         if search_type == 'label':
-            results = Item.objects.filter(label__icontains=query)
+            results = Member.objects.filter(label__icontains=query)
         elif search_type == 'type':
-            results = Item.objects.filter(type__icontains=query)
+            results = Member.objects.filter(type__icontains=query)
         elif search_type == 'color':
-            results = Item.objects.filter(color__icontains=query)
+            results = Member.objects.filter(color__icontains=query)
 
     return render(request, 'library/demo_search.html', {'form': form, 'results': results})
 

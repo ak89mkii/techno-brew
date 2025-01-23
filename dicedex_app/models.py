@@ -31,6 +31,31 @@ CARDS = (
     ('text-white bg-dark', 'Black')
 )
 
+# TDI Demo Choices:
+
+STATUS = (
+    ('Accepted', 'Accepted'),
+    ('Active', 'Active'),
+    ('Pending', 'Pending'),
+    ('Rejected', 'Rejected'),
+)
+
+BREED = (
+    ('Dog', 'Dog'),
+    ('Cat', 'Cat'),
+    ('Pokemon', 'Pokemon'),
+    ('Robot', 'Robot'),
+)
+
+F_TYPE = (
+    ('Government', 'Government'),
+    ('Public', 'Public'),
+    ('Private', 'Private'),
+    ('Death Star', 'Death Star'),
+)
+
+
+
 
 # class Link(models.Model):
 #     # description = models.CharField(verbose_name='Description', max_length=1000, default="None")
@@ -134,12 +159,12 @@ class Member(models.Model):
     phone_mobile = models.CharField(max_length=1000, default="None")
     email = models.CharField(max_length=100, default="None")
     age_18_plus = models.BooleanField(verbose_name='Email', default=False)    
-    e_newsletter = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)    
-    in_house = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)    
-    registration_p = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)    
-    registration_n_y = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)    
-    remove_mailing_list = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)    
-    no_facility_request = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)   
+    e_newsletter = models.BooleanField(verbose_name='E. Newsletter', default=False)    
+    in_house = models.BooleanField(verbose_name='In-House', default=False)    
+    registration_p = models.BooleanField(verbose_name='Registration (Prorated)', default=False)    
+    registration_n_y = models.BooleanField(verbose_name='Registration (Next Year)', default=False)    
+    remove_mailing_list = models.BooleanField(verbose_name='Remove from Mailing List', default=False)    
+    no_facility_request = models.BooleanField(verbose_name="Don't Send Facility Requests", default=False)   
     # Membership Information (13):
     # References "Facility" Class.
     facility  = models.CharField(max_length=1000, default="None")
@@ -156,10 +181,10 @@ class Member(models.Model):
     evaluator_id = models.CharField(max_length=1000, default="None")
     dsrh_id = models.CharField(max_length=1000, default="None")
     test_score = models.FloatField(max_length=100000, default="None")
-    wrong_questions = models.IntegerField(max_length=1000, default="None")
-    new = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)  
-    ren = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)  
-    sent_dvd = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)  
+    wrong_questions = models.IntegerField(default="None")
+    new = models.BooleanField(verbose_name='New Member', default=False)  
+    ren = models.BooleanField(verbose_name='Renewed Member', default=False)  
+    sent_dvd = models.BooleanField(verbose_name='TWT DVD Sent?', default=False)  
 
     # This changes the displayed text of the objects in Django admin to the declared field (label).
     def __str__(self):
@@ -169,6 +194,60 @@ class Member(models.Model):
         return reverse('home_logged_in')
 
 
-# Dog Class:
+# Dog Class (9):
 
 class Dog(models.Model):
+    # References "Member" Class.
+    d_member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='d_member')
+    dog_id = models.CharField(max_length=100, default="None")    
+    breed = models.CharField(
+        max_length=30,
+        choices=BREED,
+        default=BREED[0][0]
+    )
+    dog_name = models.CharField(max_length=100, default="None")
+    title = models.CharField(max_length=100, default="None")
+    # References "Member" Class.
+    d_member_status = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='d_member_status')
+    modified_on = models.DateTimeField(auto_now_add=True)
+    last_printed = models.DateTimeField(auto_now_add=True)
+    hrf_date = models.DateField(auto_now_add=True)
+    # References "Member" Class.
+    d_member_expires = models.ForeignKey(Member, on_delete=models.CASCADE, rlelated_name='d_member_expires')
+
+    # This changes the displayed text of the objects in Django admin to the declared field (label).
+    def __str__(self):
+        return self.label
+
+    def get_absolute_url(self):
+        return reverse('home_logged_in')
+
+
+# Facilities Class (8):
+
+class Facility(models.Model):
+    facillity_name = models.CharField(max_length=100, default="None")    
+    type = models.CharField(
+        max_length=30,
+        choices=F_TYPE,
+        default=F_TYPE[0][0]
+    )    
+    address_street = models.CharField(max_length=100, default="None")
+    city = models.CharField(max_length=100, default="None")    
+    state = models.CharField(max_length=100, default="None")    
+    zip = models.CharField(max_length=100, default="None")    
+    contact = models.CharField(max_length=100, default="None") 
+    phone = models.CharField(max_length=100, default="None")    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+
+    # This changes the displayed text of the objects in Django admin to the declared field (label).
+    def __str__(self):
+        return self.label
+
+    def get_absolute_url(self):
+        return reverse('home_logged_in')
+   
+    
+
+
+
