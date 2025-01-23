@@ -161,26 +161,14 @@ class Member(models.Model):
     ren = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)  
     sent_dvd = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)  
 
-
-    # Dog Class:
-
-    note = models.CharField(max_length=1000, default="None")
-    color = models.CharField(
-        max_length=30,
-        choices=CARDS,
-        default=CARDS[0][0]
-    )
-    timestamp = models.DateField(auto_now_add=True)
-    # Also for "owner field"
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
-    # group = models.ForeignKey(Group, on_delete=models.CASCADE)
-    # event = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)    
-    favorited = models.BooleanField(verbose_name='Favorited', default=False)
-    # wishlist_user = models.BooleanField(verbose_name='Personal Equipment Tracker', default=False)
-
     # This changes the displayed text of the objects in Django admin to the declared field (label).
     def __str__(self):
         return self.label
 
     def get_absolute_url(self):
         return reverse('home_logged_in')
+
+
+# Dog Class:
+
+class Dog(models.Model):
