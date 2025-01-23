@@ -213,7 +213,7 @@ class Dog(models.Model):
     last_printed = models.DateTimeField(auto_now_add=True)
     hrf_date = models.DateField(auto_now_add=True)
     # References "Member" Class.
-    d_member_expires = models.ForeignKey(Member, on_delete=models.CASCADE, rlelated_name='d_member_expires')
+    d_member_expires = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='d_member_expires')
 
     # This changes the displayed text of the objects in Django admin to the declared field (label).
     def __str__(self):
