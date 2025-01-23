@@ -119,6 +119,7 @@ class Theme(models.Model):
 
 # TDI Demo Classes:
 
+# Member Class:
 class Member(models.Model):
     # Contact | Base Information (18):
     last_name = models.CharField(max_length=100, default="None")
@@ -140,19 +141,29 @@ class Member(models.Model):
     remove_mailing_list = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)    
     no_facility_request = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)   
     # Membership Information (13):
-    note = models.CharField(max_length=1000, default="None")
-    note = models.CharField(max_length=1000, default="None")
-    first_name = models.CharField(max_length=100, default="None")
-    note = models.CharField(max_length=1000, default="None")
-    note = models.CharField(max_length=1000, default="None")
-    note = models.CharField(max_length=1000, default="None")
-    note = models.CharField(max_length=1000, default="None")
-    note = models.CharField(max_length=1000, default="None")
-    note = models.CharField(max_length=1000, default="None")
-    note = models.CharField(max_length=1000, default="None")
-    note = models.CharField(max_length=1000, default="None")
-    note = models.CharField(max_length=1000, default="None")
-    note = models.CharField(max_length=1000, default="None")
+    # References "Facility" Class.
+    facility  = models.CharField(max_length=1000, default="None")
+    owner_id = models.CharField(max_length=1000, default="None")
+    web_username = models.CharField(max_length=100, default="None")
+    modified_on = models.DateTimeField(auto_now_add=True)
+    member_since = models.DateField(auto_now_add=True)
+    member_status = models.CharField(
+        max_length=30,
+        choices=STATUS,
+        default=STATUS[0][0]
+    )
+    member_expires = models.DateField(auto_now_add=True)
+    evaluator_id = models.CharField(max_length=1000, default="None")
+    dsrh_id = models.CharField(max_length=1000, default="None")
+    test_score = models.FloatField(max_length=100000, default="None")
+    wrong_questions = models.IntegerField(max_length=1000, default="None")
+    new = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)  
+    ren = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)  
+    sent_dvd = models.BooleanField(verbose_name='Public Suppies Wishlist', default=False)  
+
+
+    # Dog Class:
+
     note = models.CharField(max_length=1000, default="None")
     color = models.CharField(
         max_length=30,
