@@ -226,7 +226,7 @@ class Dog(models.Model):
 # Facilities Class (8):
 
 class Facility(models.Model):
-    facility_name = models.CharField(max_length=100, default=None, null=True, blank=True)
+    facility_name = models.CharField(max_length=100, default="None")    
     type = models.CharField(
         max_length=30,
         choices=F_TYPE,
@@ -240,9 +240,9 @@ class Facility(models.Model):
     phone = models.CharField(max_length=100, default="None")    
     user = models.ForeignKey(User, on_delete=models.CASCADE)
 
-    # This changes the displayed text of the objects in Django admin to the declared field (label).
+    # This changes the displayed text of the objects in Django admin to the declared field (facility_name).
     def __str__(self):
-        return self.label
+        return self.facility_name
 
     def get_absolute_url(self):
         return reverse('home_logged_in')
