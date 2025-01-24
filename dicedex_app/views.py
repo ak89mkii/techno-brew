@@ -111,12 +111,12 @@ def library_index_demo_search(request):
         query = form.cleaned_data['query']
 
         # Filter the results based on search type
-        if search_type == 'label':
-            results = Member.objects.filter(label__icontains=query)
-        elif search_type == 'type':
-            results = Member.objects.filter(type__icontains=query)
-        elif search_type == 'color':
-            results = Member.objects.filter(color__icontains=query)
+        if search_type == 'last_name':
+            results = Member.objects.filter(last_name__icontains=query)
+        elif search_type == 'first_name':
+            results = Member.objects.filter(first_name__icontains=query)
+        elif search_type == 'owner_id':
+            results = Member.objects.filter(owner_id__icontains=query)
 
     return render(request, 'library/demo_search.html', {'form': form, 'results': results})
 
