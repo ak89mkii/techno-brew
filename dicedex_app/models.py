@@ -167,7 +167,7 @@ class Member(models.Model):
     no_facility_request = models.BooleanField(verbose_name="Don't Send Facility Requests", default=False)   
     # Membership Information (13):
     # References "Facility" Class.
-    facility  = models.CharField(max_length=1000, default="None")
+    facility = models.ForeignKey(User, on_delete=models.CASCADE)
     owner_id = models.CharField(max_length=1000, default="None")
     web_username = models.CharField(max_length=100, default="None")
     modified_on = models.DateTimeField(auto_now_add=True)
@@ -226,7 +226,7 @@ class Dog(models.Model):
 # Facilities Class (8):
 
 class Facility(models.Model):
-    facillity_name = models.CharField(max_length=100, default="None")    
+    facility_name = models.CharField(max_length=100, default="None")    
     type = models.CharField(
         max_length=30,
         choices=F_TYPE,
