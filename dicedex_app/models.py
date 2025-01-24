@@ -188,7 +188,7 @@ class Member(models.Model):
 
     # This changes the displayed text of the objects in Django admin to the declared field (label).
     def __str__(self):
-        return self.owner_id
+        return self.label
 
     def get_absolute_url(self):
         return reverse('home_logged_in')
@@ -217,7 +217,7 @@ class Dog(models.Model):
 
     # This changes the displayed text of the objects in Django admin to the declared field (label).
     def __str__(self):
-        return self.dog_name
+        return self.label
 
     def get_absolute_url(self):
         return reverse('home_logged_in')
@@ -242,13 +242,10 @@ class Facility(models.Model):
 
     # This changes the displayed text of the objects in Django admin to the declared field (label).
     def __str__(self):
-        return self.facility_name
+        return self.label
 
     def get_absolute_url(self):
         return reverse('home_logged_in')
-    
-
-# Goku
    
     
 
