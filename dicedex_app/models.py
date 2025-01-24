@@ -226,7 +226,7 @@ class Dog(models.Model):
 # Facilities Class (8):
 
 class Facility(models.Model):
-    facility_name = models.CharField(max_length=100, default="None")    
+    facility_name = models.CharField(max_length=100, default=None, null=True, blank=True)
     type = models.CharField(
         max_length=30,
         choices=F_TYPE,
