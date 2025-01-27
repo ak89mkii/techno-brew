@@ -188,7 +188,7 @@ class Member(models.Model):
 
     # This changes the displayed text of the objects in Django admin to the declared field (label).
     def __str__(self):
-        return self.last_name
+        return f"{self.last_name}, {self.first_name}, {self.owner_id}"
 
     def get_absolute_url(self):
         return reverse('home_logged_in')
