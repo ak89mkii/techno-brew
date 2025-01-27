@@ -18,7 +18,7 @@ admin.site.register(Member, MemberAdmin)
 
 # Step 1: Configure DogAdmin with autocomplete_fields
 class DogAdmin(admin.ModelAdmin):
-    autocomplete_fields = ['member']  # Use autocomplete for the ForeignKey to Member
+    autocomplete_fields = ['d_member']  # Use autocomplete for the ForeignKey to Member
 
 admin.site.register(Dog, DogAdmin)
 
