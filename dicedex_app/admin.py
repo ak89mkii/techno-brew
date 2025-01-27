@@ -6,8 +6,8 @@ from .models import Link, Item, Theme, Member, Dog, Facility
 admin.site.register(Link)
 admin.site.register(Item)
 admin.site.register(Theme)
-admin.site.register(Member)
-admin.site.register(Dog)
+# admin.site.register(Member)
+# admin.site.register(Dog)
 admin.site.register(Facility)
 
 # Step 2: Configure MemberAdmin with search_fields
