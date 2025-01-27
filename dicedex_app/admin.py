@@ -12,13 +12,13 @@ admin.site.register(Facility)
 
 # Step 2: Configure MemberAdmin with search_fields
 class MemberAdmin(admin.ModelAdmin):
-    search_fields = ['last_name', 'status', 'expiration']  # Make these fields searchable
+    search_fields = ['last_name', 'member_status', 'member_expires']  # Make these fields searchable
 
 admin.site.register(Member, MemberAdmin)
 
 # Step 1: Configure DogAdmin with autocomplete_fields
 class DogAdmin(admin.ModelAdmin):
-    autocomplete_fields = ['d_member']  # Use autocomplete for the ForeignKey to Member
+    autocomplete_fields = ['d_member', 'd_member_status', 'd_member_expires']  # Use autocomplete for the ForeignKey to Member
 
 admin.site.register(Dog, DogAdmin)
 
