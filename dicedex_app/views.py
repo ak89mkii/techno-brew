@@ -117,6 +117,10 @@ def library_index_demo_search(request):
             results = Member.objects.filter(first_name__icontains=query)
         elif search_type == 'owner_id':
             results = Member.objects.filter(owner_id__icontains=query)
+        elif search_type == 'dog_name':
+            results = Dog.objects.filter(dog_name__icontains=query)
+        elif search_type == 'dog_id':
+            results = Dog.objects.filter(dog_id__icontains=query)
 
     return render(request, 'library/demo_search.html', {'form': form, 'results': results})
 
