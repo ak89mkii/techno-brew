@@ -217,7 +217,7 @@ class Dog(models.Model):
 
     # This changes the displayed text of the objects in Django admin to the declared field (label).
     def __str__(self):
-        return self.dog_name
+        return f"Dog Name: {self.dog_name} | Dog ID: {self.dog_id}"
 
     def get_absolute_url(self):
         return reverse('home_logged_in')
