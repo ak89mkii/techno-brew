@@ -41,7 +41,7 @@
 
 <div class='container'>
 
-  <h1>{{ member.first_name }} {{ member.last_name }}</h1>
+  <h1>{{ members.first_name }} {{ members.last_name }}</h1>
   <br>
   <br>
 
@@ -65,8 +65,8 @@
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
-        <div class="fw-bold">First Name: {{member.first_name}}</div>
-        Albert
+        <div class="fw-bold">First Name:</div>
+        {{member.first_name}}
       </div> 
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
