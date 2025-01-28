@@ -92,10 +92,10 @@ def library_index_03(request):
 # SECTION MAIN: TDI Demo "Membership Page Search Results"
 @login_required
 def library_index_demo(request, pk):
-    member = get_object_or_404(Member, pk=pk)
+    members = get_object_or_404(Member, pk=pk)
         # Pass data to the template
     context = {
-        'member': member,
+        'members': members,
         # 'dogs': dogs,
     }
     return render(request, 'library/demo.html', context)
