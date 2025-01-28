@@ -98,7 +98,7 @@ def library_index_demo(request, pk):
         'member': member,
         # 'dogs': dogs,
     }
-    return render(request, 'demo.html', context)
+    return render(request, 'llibrary/demo.html', context)
 
 # @login_required
 # def detail_view(request, pk):
