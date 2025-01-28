@@ -130,10 +130,17 @@
   </ol>
   <br>
 
+  <div>
+    <label>
+        <input type="checkbox" name="checkbox" {% if member.data %}checked{% endif %} disabled>
+        Under 18 Years Old? {{members.age_18_plus}}
+    </label>
+  </div>
+
   <div class="form-check">
     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked readonly>
     <label class="form-check-label" for="flexCheckChecked">
-      Under 18 Years Old?       {{members.age_18_plus}}
+      Under 18 Years Old?:      {{members.age_18_plus}}
     </label>
   </div>  
 
