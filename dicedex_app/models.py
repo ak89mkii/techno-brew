@@ -154,7 +154,7 @@ class Member(models.Model):
     state = models.CharField(max_length=1000, default="None")
     zip = models.CharField(max_length=1000, default="None")
     country = models.CharField(max_length=1000, default="None")
-    country_code = models.CharField(max_length=3, default="USA")
+    country_code = models.CharField(max_length=5, default="USA")
     region = models.CharField(max_length=1000, default="None")
     phone_primary = models.CharField(max_length=1000, default="None")
     phone_mobile = models.CharField(max_length=1000, default="None")
