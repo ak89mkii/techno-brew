@@ -186,7 +186,7 @@ class Member(models.Model):
     ren = models.BooleanField(verbose_name='Renewed Member', default=False)  
     sent_dvd = models.BooleanField(verbose_name='TWT DVD Sent?', default=False)  
     # Input and Editing Info:
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
     timestamp = models.DateField(auto_now_add=True)
 
     # This changes the displayed text of the objects in Django admin to the declared field (label).
