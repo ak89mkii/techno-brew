@@ -41,7 +41,8 @@
 
 <div class='container'>
 
-  <h1>Albert Einstein</h1>
+  {% for member in members %}
+  <h1>{{ member.first_name }} {{ member.last_name }}</h1>
   <br>
   <br>
 

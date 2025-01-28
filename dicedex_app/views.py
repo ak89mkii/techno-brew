@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from .models import Item, Link, Theme, Member, Dog, Facility
 from django.contrib.auth import login
@@ -91,9 +91,14 @@ def library_index_03(request):
 
 # SECTION MAIN: TDI Demo "Membership Page Search Results"
 @login_required
-def library_index_demo(request):
-    # results = None
-    return render(request, 'library/demo.html', {})
+def library_index_demo(request, pk):
+    member = get_object_or_404(Member, pk=pk)
+        # Pass data to the template
+    context = {
+        'member': member,
+        # 'dogs': dogs,
+    }
+    return render(request, 'demo.html', context)
 
 # @login_required
 # def detail_view(request, pk):
