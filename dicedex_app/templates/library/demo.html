@@ -44,6 +44,8 @@
   <h1>{{ members.first_name }} {{ members.last_name }}</h1>
   <br>
   <br>
+  <p>Inputted By: {{members.user}} | Modified On: {{members.timestamp}}</p>
+  <br>
 
 
 <div class="row row-cols-1 row-cols-md-3 row-cols-xxl-3 g-4">
@@ -55,10 +57,6 @@
   <div class="alert alert-primary" role="alert">
     Contact | Base Information 
   </div>
-  <br>
-  <p>Inputted By: {{members.user}}</p>
-  <p>Modified On: {{members.timestamp}}</p>
-  <br>
 
   <ol class="list-group list-group-numbered">
     <li class="list-group-item d-flex justify-content-between align-items-start">
