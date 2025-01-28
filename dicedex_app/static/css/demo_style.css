@@ -10,6 +10,13 @@ h1 {
     text-align: center;
 }
 
+ /* Style when checked */
+ input[type="checkbox"]:checked {
+    background-color: darkblue;
+    border-color: darkblue;
+}
+
+
 #title {
     background-color: #f47d7d;
     font-size: 30px;
