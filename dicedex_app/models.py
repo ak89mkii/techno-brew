@@ -158,7 +158,7 @@ class Member(models.Model):
     phone_primary = models.CharField(max_length=1000, default="None")
     phone_mobile = models.CharField(max_length=1000, default="None")
     email = models.CharField(max_length=100, default="None")
-    age_18_plus = models.BooleanField(verbose_name='Email', default=False)    
+    age_18_plus = models.BooleanField(verbose_name='18 >= Old', default=False)    
     e_newsletter = models.BooleanField(verbose_name='E. Newsletter', default=False)    
     in_house = models.BooleanField(verbose_name='In-House', default=False)    
     registration_p = models.BooleanField(verbose_name='Registration (Prorated)', default=False)    
