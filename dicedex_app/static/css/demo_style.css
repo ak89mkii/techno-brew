@@ -27,8 +27,8 @@ input[type="checkbox"] {
 
 /* Style when checked */
 input[type="checkbox"]:checked {
-    background-color: rgb(106, 247, 148);
-    border-color: rgb(106, 247, 148);
+    background-color: cornflowerblue;
+    border-color: cornflowerblue;
 }
 
 /* Add a checkmark */
