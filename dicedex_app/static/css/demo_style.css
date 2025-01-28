@@ -10,10 +10,46 @@ h1 {
     text-align: center;
 }
 
- /* Style when checked */
- input[type="checkbox"]:checked {
+/* styles.css */
+
+/* Hide the native checkbox */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid darkblue;
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    cursor: pointer;
+}
+
+/* Style when checked */
+input[type="checkbox"]:checked {
     background-color: darkblue;
     border-color: darkblue;
+}
+
+/* Add a checkmark */
+input[type="checkbox"]:checked::after {
+    content: "✓";
+    color: white;
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    line-height: 18px;
+}
+
+/* Hover effect */
+input[type="checkbox"]:hover {
+    border-color: darkblue;
+}
+
+/* Focus effect */
+input[type="checkbox"]:focus {
+    outline: 2px solid darkblue;
+    outline-offset: 2px;
 }
 
 
