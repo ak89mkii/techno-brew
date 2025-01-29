@@ -140,28 +140,28 @@
   <div>
     <label>
         <input type="checkbox" name="checkbox" {% if members.e_newsletter %}checked{% endif %} disabled>
-        Under 18 Years Old? 
+        E-Newsletter?
     </label>
   </div>
 
   <div>
     <label>
         <input type="checkbox" name="checkbox" {% if members.in_house %}checked{% endif %} disabled>
-        E-Newsletter?
-      </label>
-  </div>
-
-  <div>
-    <label>
-        <input type="checkbox" name="checkbox" {% if members.registration_p %}checked{% endif %} disabled>
         In-House?
       </label>
   </div>
 
   <div>
     <label>
-        <input type="checkbox" name="checkbox" {% if members.registration_n_y %}checked{% endif %} disabled>
+        <input type="checkbox" name="checkbox" {% if members.registration_p %}checked{% endif %} disabled>
         Prorated Registration?
+      </label>
+  </div>
+
+  <div>
+    <label>
+        <input type="checkbox" name="checkbox" {% if members.registration_n_y %}checked{% endif %} disabled>
+        Next Year's Registration?
       </label>
   </div>
 
