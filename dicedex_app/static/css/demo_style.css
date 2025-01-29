@@ -25,6 +25,17 @@ input[type="checkbox"] {
     cursor: pointer;
 }
 
+/* Add a placeholder for unchecked state */
+input[type="checkbox"]::after {
+    content: "✓"; /* Keep the same size for consistency */
+    color: transparent; /* Make the checkmark invisible */
+    font-size: 14px;
+    display: block;
+    text-align: center;
+    line-height: 18px;
+    visibility: hidden; /* Prevents layout shifting */
+}
+
 /* Style when checked */
 input[type="checkbox"]:checked {
     background-color: cornflowerblue;
@@ -39,6 +50,7 @@ input[type="checkbox"]:checked::after {
     display: block;
     text-align: center;
     line-height: 18px;
+    visibility: visible;
 }
 
 /* Hover effect */
