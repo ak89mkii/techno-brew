@@ -203,6 +203,7 @@ class Member(models.Model):
 
 class Dog(models.Model):
     # References "Member" Class.
+    # The "related_name" attribute provides a reverse realtionship from a related model back to the model that holds the ForeignKey, OneToOneField, or ManyToManyField.
     d_member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='dogs')
     dog_id = models.CharField(max_length=100, default="None")    
     breed = models.CharField(
