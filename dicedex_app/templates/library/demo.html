@@ -136,54 +136,47 @@
         Under 18 Years Old? 
     </label>
   </div>
-
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked readonly>
-    <label class="form-check-label" for="flexCheckChecked">
-      Under 18 Years Old?:      {{members.age_18_plus}}
+  
+  <div>
+    <label>
+        <input type="checkbox" name="checkbox" {% if members.e_newsletter %}checked{% endif %} disabled>
+        Under 18 Years Old? 
     </label>
-  </div>  
+  </div>
 
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-    <label class="form-check-label" for="flexCheckChecked">
-      E-Newsletter?
-    </label>
-  </div> 
+  <div>
+    <label>
+        <input type="checkbox" name="checkbox" {% if members.in_house %}checked{% endif %} disabled>
+        E-Newsletter?
+      </label>
+  </div>
 
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-    <label class="form-check-label" for="flexCheckChecked">
-      In-House?
-    </label>
-  </div> 
+  <div>
+    <label>
+        <input type="checkbox" name="checkbox" {% if members.registration_p %}checked{% endif %} disabled>
+        In-House?
+      </label>
+  </div>
 
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-    <label class="form-check-label" for="flexCheckChecked">
-      Prorated Registration?
-    </label>
-  </div> 
+  <div>
+    <label>
+        <input type="checkbox" name="checkbox" {% if members.registration_n_y %}checked{% endif %} disabled>
+        Prorated Registration?
+      </label>
+  </div>
 
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-    <label class="form-check-label" for="flexCheckChecked">
-      Next Year's Registration?
-    </label>
-  </div> 
+  <div>
+    <label>
+        <input type="checkbox" name="checkbox" {% if members.remove_mailing_list %}checked{% endif %} disabled>
+        Remove from NL Mailing List?
+      </label>
+  </div>
 
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-    <label class="form-check-label" for="flexCheckChecked">
-      Remove from NL Mailing List?
-    </label>
-  </div> 
-
-  <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-    <label class="form-check-label" for="flexCheckChecked">
-      Don't Send in Facility Request?
-    </label>
+  <div>
+    <label>
+        <input type="checkbox" name="checkbox" {% if members.no_facility_request %}checked{% endif %} disabled>
+        Don't Send in Facility Request?
+      </label>
   </div>
 
 </div>
