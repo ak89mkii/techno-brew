@@ -214,12 +214,11 @@ class Dog(models.Model):
     dog_name = models.CharField(max_length=100, default="None")
     title = models.CharField(max_length=100, default="None")
     # References "Member" Class.
-    d_member_status = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='d_member_status')
-    modified_on = models.DateTimeField(auto_now_add=True)
-    last_printed = models.DateTimeField(auto_now_add=True)
-    hrf_date = models.DateField(auto_now_add=True)
+    modified_on = models.DateTimeField(auto_now=True)
+    last_printed = models.DateTimeField(default="2025-01-01")
+    hrf_date = models.DateField(default="2025-01-01")
     # References "Member" Class.
-    d_member_expires = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='d_member_expires')
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     # This changes the displayed text of the objects in Django admin to the declared field (label).
     def __str__(self):
