@@ -363,12 +363,12 @@
 
 <div class="row row-cols-1 row-cols-md-3 row-cols-xxl-3 g-4">
   
-  
+{% for dog in dogs %}
 <div class="col">
   <div class="card mb-3 mx-auto h-100">
     <img src="https://media0.giphy.com/media/ukwPlCmJ5RmlqvQCpA/giphy.gif?cid=6c09b9526ngl04qiqd9dwhgz9u3qo30r4m1v004ynkrr4puq&ep=v1_gifs_search&rid=giphy.gif&ct=g" class="card-img-top" alt="...">
     <br>      
-    <h5 class="card-title">Name: Dogecoin</h5>
+    <h5 class="card-title">Name: {{dog.dog_name}}</h5>
     <ul class="list-group list-group-flush">
       <li class="list-group-item">Dog ID:</li>
       <li class="list-group-item">Breed:</li>
@@ -384,6 +384,7 @@
   <br>
   <br>
 </div>
+{% endfor %}
 
 
 </div>

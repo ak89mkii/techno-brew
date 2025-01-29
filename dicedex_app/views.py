@@ -93,10 +93,11 @@ def library_index_03(request):
 @login_required
 def library_index_demo(request, pk):
     members = get_object_or_404(Member, pk=pk)
+    dogs = members.dogs.all()
         # Pass data to the template
     context = {
         'members': members,
-        # 'dogs': dogs,
+        'dogs': dogs,
     }
     return render(request, 'library/demo.html', context)
 
