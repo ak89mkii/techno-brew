@@ -193,61 +193,61 @@
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Owner ID Number:</div>
-        10111010
+        {{members.owner_id}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Web Username:</div>
-        no_quantum_squared
+        {{members.web_username}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Modified On:</div>
-        01/01/3025
+        {{members.modified_on}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Member Since:</div>
-        01/01/3001
+        {{members.member_since}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Member Status:</div>
-        Active
+        {{members.member_status}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Member Expires:</div>
-        01/01/2026
+        {{members.member_expires}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Evaluator ID Number:</div>
-        10111011
+        {{members.evaluator_id}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">DSRH ID Number:</div>
-        10111100
+        {{members.dsrh_id}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Test Score:</div>
-        <p><span class="input-group-text"><b>97%</b></span></p> 
+        <p><span class="input-group-text"><b>{{members.test_score}}%</b></span></p> 
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Incorrect Questions:</div>
-        5
+        {{members.wrong_questions}}
       </div>
     </li>
   </ol>

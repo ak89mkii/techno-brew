@@ -172,13 +172,13 @@ class Member(models.Model):
     owner_id = models.CharField(max_length=1000, default="None")
     web_username = models.CharField(max_length=100, default="None")
     modified_on = models.DateTimeField(auto_now_add=True)
-    member_since = models.DateField(auto_now_add=True)
+    member_since = models.DateField(default="2025-01-01")
     member_status = models.CharField(
         max_length=30,
         choices=STATUS,
         default=STATUS[0][0]
     )
-    member_expires = models.DateField(auto_now_add=True)
+    member_expires = models.DateField(default="2025-01-01")
     evaluator_id = models.CharField(max_length=1000, default="None")
     dsrh_id = models.CharField(max_length=1000, default="None")
     test_score = models.FloatField(max_length=100000, default="None")
