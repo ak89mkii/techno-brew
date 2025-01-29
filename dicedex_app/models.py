@@ -203,7 +203,7 @@ class Member(models.Model):
 
 class Dog(models.Model):
     # References "Member" Class.
-    d_member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='d_member')
+    d_member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='dogs')
     dog_id = models.CharField(max_length=100, default="None")    
     breed = models.CharField(
         max_length=30,
