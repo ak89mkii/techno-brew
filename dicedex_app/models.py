@@ -171,7 +171,8 @@ class Member(models.Model):
     facility = models.ForeignKey('Facility', on_delete=models.CASCADE)
     owner_id = models.CharField(max_length=1000, default="None")
     web_username = models.CharField(max_length=100, default="None")
-    modified_on = models.DateTimeField(auto_now_add=True)
+    created_on = models.DateTimeField(auto_now_add=True)
+    modified_on = models.DateTimeField(auto_now=True)
     member_since = models.DateField(default="2025-01-01")
     member_status = models.CharField(
         max_length=30,
