@@ -201,10 +201,10 @@ class Member(models.Model):
 
 # Dog Class (9):
 
-class Dog(models.Model):
+class Dogo(models.Model):
     # References "Member" Class.
     # The "related_name" attribute provides a reverse realtionship from a related model back to the model that holds the ForeignKey, OneToOneField, or ManyToManyField.
-    # d_member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='dogs', null=True, blank=True)
+    d_member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='dogs', null=True, blank=True)
     dog_id = models.CharField(max_length=100, default="None")    
     breed = models.CharField(
         max_length=30,
@@ -218,7 +218,7 @@ class Dog(models.Model):
     last_printed = models.DateTimeField(default="2025-01-01")
     hrf_date = models.DateField(default="2025-01-01")
     # References "Member" Class.
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     # This changes the displayed text of the objects in Django admin to the declared field (label).
     def __str__(self):
