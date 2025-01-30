@@ -215,8 +215,8 @@ class Dog(models.Model):
     title = models.CharField(max_length=100, default="None")
     # References "Member" Class.
     modified_on = models.DateTimeField(auto_now=True)
-    # last_printed = models.DateTimeField(default="2025-01-01")
-    # hrf_date = models.DateField(default="2025-01-01")
+    last_printed = models.DateTimeField(default="2025-01-01")
+    hrf_date = models.DateField(default="2025-01-01")
     # References "Member" Class.
     user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
