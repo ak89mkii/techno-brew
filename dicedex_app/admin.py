@@ -7,7 +7,7 @@ admin.site.register(Link)
 admin.site.register(Item)
 admin.site.register(Theme)
 # admin.site.register(Member)
-# admin.site.register(Dog)
+admin.site.register(Dog)
 admin.site.register(Facility)
 
 # Step 2: Configure MemberAdmin with search_fields
@@ -16,11 +16,11 @@ class MemberAdmin(admin.ModelAdmin):
 
 admin.site.register(Member, MemberAdmin)
 
-# Step 1: Configure DogAdmin with autocomplete_fields
-class DogAdmin(admin.ModelAdmin):
-    autocomplete_fields = ['d_member']  # Use autocomplete for the ForeignKey to Member
+# # Step 1: Configure DogAdmin with autocomplete_fields
+# class DogAdmin(admin.ModelAdmin):
+#     autocomplete_fields = ['d_member']  # Use autocomplete for the ForeignKey to Member
 
-admin.site.register(Dog, DogAdmin)
+# admin.site.register(Dog, DogAdmin)
 
 
 
