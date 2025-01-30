@@ -218,7 +218,7 @@ class Dog(models.Model):
     last_printed = models.DateTimeField(default="2025-01-01")
     hrf_date = models.DateField(default="2025-01-01")
     # References "Member" Class.
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     # This changes the displayed text of the objects in Django admin to the declared field (label).
     def __str__(self):
