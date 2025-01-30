@@ -94,7 +94,7 @@ def library_index_03(request):
 def library_index_demo(request, pk):
     member = get_object_or_404(Member, pk=pk)
     dogs = member.dogs.all()
-    facility = member.facility.all()
+    facility = member.facility
         # Pass data to the template
     context = {
         'member': member,
