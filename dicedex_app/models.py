@@ -215,7 +215,7 @@ class Dog(models.Model):
     title = models.CharField(max_length=100, default="None")
     # References "Member" Class.
     # modified_on = models.DateTimeField(auto_now=True)
-    modified_on = models.DateTimeField(default="2025-01-01")
+    # modified_on = models.DateTimeField(default="2025-01-01")
     last_printed = models.DateTimeField(default="2025-01-01")
     hrf_date = models.DateField(default="2025-01-01")
     # References "Member" Class.
@@ -232,6 +232,7 @@ class Dog(models.Model):
 # Facilities Class (8):
 
 class Facility(models.Model):
+    # f_member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name='facility')
     facility_name = models.CharField(max_length=100, default="None")    
     description = models.CharField(max_length=1000, default="None")    
     type = models.CharField(
