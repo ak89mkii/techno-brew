@@ -41,10 +41,10 @@
 
 <div class='container'>
 
-  <h1>{{ members.first_name }} {{ members.last_name }}</h1>
+  <h1>{{ member.first_name }} {{ member.last_name }}</h1>
   <br>
   <br>
-  <p>[ <b>Inputted By:</b> {{members.user}} | <b>Modified On:</b> {{members.modified_on}} ]</p>
+  <p>[ <b>Inputted By:</b> {{member.user}} | <b>Modified On:</b> {{member.modified_on}} ]</p>
   <br>
 
 
@@ -62,69 +62,69 @@
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Last Name:</div>
-        {{members.last_name}}
+        {{member.last_name}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">First Name:</div>
-        {{members.first_name}}
+        {{member.first_name}}
       </div> 
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Address (Street):</div>
-        {{members.address_street}}
+        {{member.address_street}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">City:</div>
-        {{members.city}}
+        {{member.city}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">State:</div>
-        {{members.state}}
+        {{member.state}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Zip Code:</div>
-        {{members.zip}}
+        {{member.zip}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Country:</div>
-        {{members.country}}
+        {{member.country}}
       </div>
-      <span class="badge text-bg-primary rounded-pill">{{members.country_code}}</span>
+      <span class="badge text-bg-primary rounded-pill">{{member.country_code}}</span>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Region:</div>
-        {{members.region}}
+        {{member.region}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Phone Number (Primary):</div>
-        {{members.phone_primary}}
+        {{member.phone_primary}}
       </div>
       <br>  
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Phone Number (Mobile):</div>
-        {{members.phone_mobile}}
+        {{member.phone_mobile}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Email Address:</div>
-        {{members.email}}
+        {{member.email}}
       </div>
     </li>
   </ol>
@@ -132,49 +132,49 @@
 
   <div>
     <label>
-        <input type="checkbox" name="checkbox" {% if members.age_18_plus %}checked{% endif %} disabled>
+        <input type="checkbox" name="checkbox" {% if member.age_18_plus %}checked{% endif %} disabled>
         Under 18 Years Old? 
     </label>
   </div>
   
   <div>
     <label>
-        <input type="checkbox" name="checkbox" {% if members.e_newsletter %}checked{% endif %} disabled>
+        <input type="checkbox" name="checkbox" {% if member.e_newsletter %}checked{% endif %} disabled>
         E-Newsletter?
     </label>
   </div>
 
   <div>
     <label>
-        <input type="checkbox" name="checkbox" {% if members.in_house %}checked{% endif %} disabled>
+        <input type="checkbox" name="checkbox" {% if member.in_house %}checked{% endif %} disabled>
         In-House?
       </label>
   </div>
 
   <div>
     <label>
-        <input type="checkbox" name="checkbox" {% if members.registration_p %}checked{% endif %} disabled>
+        <input type="checkbox" name="checkbox" {% if member.registration_p %}checked{% endif %} disabled>
         Prorated Registration?
       </label>
   </div>
 
   <div>
     <label>
-        <input type="checkbox" name="checkbox" {% if members.registration_n_y %}checked{% endif %} disabled>
+        <input type="checkbox" name="checkbox" {% if member.registration_n_y %}checked{% endif %} disabled>
         Next Year's Registration?
       </label>
   </div>
 
   <div>
     <label>
-        <input type="checkbox" name="checkbox" {% if members.remove_mailing_list %}checked{% endif %} disabled>
+        <input type="checkbox" name="checkbox" {% if member.remove_mailing_list %}checked{% endif %} disabled>
         Remove from NL Mailing List?
       </label>
   </div>
 
   <div>
     <label>
-        <input type="checkbox" name="checkbox" {% if members.no_facility_request %}checked{% endif %} disabled>
+        <input type="checkbox" name="checkbox" {% if member.no_facility_request %}checked{% endif %} disabled>
         Don't Send in Facility Request?
       </label>
   </div>
@@ -193,67 +193,67 @@
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Owner ID Number:</div>
-        {{members.owner_id}}
+        {{member.owner_id}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Web Username:</div>
-        {{members.web_username}}
+        {{member.web_username}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Created On:</div>
-        {{members.created_on}}
+        {{member.created_on}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Modified On:</div>
-        {{members.modified_on}}
+        {{member.modified_on}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Member Since:</div>
-        {{members.member_since}}
+        {{member.member_since}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Member Status:</div>
-        {{members.member_status}}
+        {{member.member_status}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Member Expires:</div>
-        {{members.member_expires}}
+        {{member.member_expires}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Evaluator ID Number:</div>
-        {{members.evaluator_id}}
+        {{member.evaluator_id}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">DSRH ID Number:</div>
-        {{members.dsrh_id}}
+        {{member.dsrh_id}}
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Test Score:</div>
-        <p><span class="input-group-text"><b>{{members.test_score}}%</b></span></p> 
+        <p><span class="input-group-text"><b>{{member.test_score}}%</b></span></p> 
       </div>
     </li>
     <li class="list-group-item d-flex justify-content-between align-items-start">
       <div class="ms-2 me-auto">
         <div class="fw-bold">Incorrect Questions:</div>
-        {{members.wrong_questions}}
+        {{member.wrong_questions}}
       </div>
     </li>
   </ol>
@@ -261,21 +261,21 @@
 
   <div>
     <label>
-        <input type="checkbox" name="checkbox" {% if members.new %}checked{% endif %} disabled>
+        <input type="checkbox" name="checkbox" {% if member.new %}checked{% endif %} disabled>
         NEW?
     </label>
   </div>  
   
   <div>
     <label>
-        <input type="checkbox" name="checkbox" {% if members.ren %}checked{% endif %} disabled>
+        <input type="checkbox" name="checkbox" {% if member.ren %}checked{% endif %} disabled>
         REN?
     </label>
   </div>  
   
   <div>
     <label>
-        <input type="checkbox" name="checkbox" {% if members.sent_dvd %}checked{% endif %} disabled>
+        <input type="checkbox" name="checkbox" {% if member.sent_dvd %}checked{% endif %} disabled>
         Sent TWT DVD?
     </label>
   </div>
@@ -355,7 +355,7 @@
 <div class="card text-bg-warning mb-3 mx-auto h-100">
   <!-- <div class="card-header"> -->
     <div class="alert alert-warning" role="alert">
-      {{members.first_name}} {{members.last_name}}'s Dog(s)
+      {{member.first_name}} {{member.last_name}}'s Dog(s)
     </div>
   <!-- </div> -->
   <br>
@@ -363,6 +363,7 @@
 
 <div class="row row-cols-1 row-cols-md-3 row-cols-xxl-3 g-4">
   
+
 {% for dog in dogs %}
 <div class="col">
   <div class="card mb-3 mx-auto h-100">
@@ -411,21 +412,21 @@
   <div class="card mb-3 mx-auto h-100">
   <!-- <img src="https://media0.giphy.com/media/ukwPlCmJ5RmlqvQCpA/giphy.gif?cid=6c09b9526ngl04qiqd9dwhgz9u3qo30r4m1v004ynkrr4puq&ep=v1_gifs_search&rid=giphy.gif&ct=g" class="card-img-top" alt="..."> -->
   <div class="card-body">
-    <h5 class="card-title">Name: Black Mesa</h5>
+    <h5 class="card-title">Name: {{facility.facility_name}}</h5>
     <p class="card-text">Description: </p>
   </div>
   <ul class="list-group list-group-flush">
-    <li class="list-group-item">Type:</li>
-    <li class="list-group-item">Address:</li>
-    <li class="list-group-item">City:</li>
-    <li class="list-group-item">State:</li>
-    <li class="list-group-item">Zip:</li>
-    <li class="list-group-item">Contact:</li>
-    <li class="list-group-item">Phone Number:</li>
+    <li class="list-group-item">Type: {{facility.type}}</li>
+    <li class="list-group-item">Address: {{facility.address_street}}</li>
+    <li class="list-group-item">City: {{facility.city}}</li>
+    <li class="list-group-item">State: {{facility.state}}</li>
+    <li class="list-group-item">Zip: {{facility.zip}}</li>
+    <li class="list-group-item">Contact: {{facility.contact}}</li>
+    <li class="list-group-item">Phone Number: {{facility.phone}}</li>
   </ul>
   <div class="card-footer text-muted">
-    <li class="list-group-item">Inputted By:</li>
-    <li class="list-group-item">Modified On:</li>
+    <li class="list-group-item">Inputted By: {{facility.user}}</li>
+    <li class="list-group-item">Modified On: {{facility.modified_on}}</li>
   </div>
   <br>
   <br>

@@ -214,7 +214,7 @@ class Dog(models.Model):
     dog_name = models.CharField(max_length=100, default="None")
     title = models.CharField(max_length=100, default="None")
     # References "Member" Class.
-    # modified_on = models.DateTimeField(auto_now=True)
+    modified_on = models.DateTimeField(auto_now=True)
     last_printed = models.DateTimeField(default="2025-01-01")
     hrf_date = models.DateField(default="2025-01-01")
     # References "Member" Class.
@@ -232,6 +232,7 @@ class Dog(models.Model):
 
 class Facility(models.Model):
     facility_name = models.CharField(max_length=100, default="None")    
+    description = models.CharField(max_length=1000, default="None")    
     type = models.CharField(
         max_length=30,
         choices=F_TYPE,
@@ -244,6 +245,7 @@ class Facility(models.Model):
     contact = models.CharField(max_length=100, default="None") 
     phone = models.CharField(max_length=100, default="None")    
     user = models.ForeignKey(User, on_delete=models.CASCADE)
+    modified_on = models.DateTimeField(auto_now=True)
 
     # This changes the displayed text of the objects in Django admin to the declared field (facility_name).
     def __str__(self):
