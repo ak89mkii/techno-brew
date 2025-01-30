@@ -214,7 +214,7 @@ class Dog(models.Model):
     dog_name = models.CharField(max_length=100, default="None")
     title = models.CharField(max_length=100, default="None")
     # References "Member" Class.
-    modified = models.DateTimeField(auto_now=True, null=True)  # Remove default=None
+    modified = models.DateTimeField(auto_now=True)
     last_printed = models.DateTimeField(default="2025-01-01")
     hrf_date = models.DateField(default="2025-01-01")
     # References "Member" Class.
