@@ -107,16 +107,18 @@ def library_index_demo(request, pk):
 @login_required
 def dog_detail_demo(request, pk):
     dog = get_object_or_404(Dog, pk=pk)
-    member = dog.d_member  # Ensure correct associated member is retrieved
+    member = dog.d_member  # Get associated member
+    dogs = member.dogs.all() if member else [dog]  # Include all dogs for the member
+
     facility = member.facility if member else None
 
     context = {
-        'dog': dog,
         'member': member,
+        'dogs': dogs,  # Pass all dogs instead of just one
         'facility': facility,
+        'is_dog': True,  # Flag to indicate this is a dog view
     }
     return render(request, 'library/demo.html', context)
-
 
 # SECTION MAIN: TDI Demo "Membership Search Page"
 @login_required
