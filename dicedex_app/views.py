@@ -89,7 +89,7 @@ def library_index_03(request):
     themes = Theme.objects.filter(user=request.user).order_by('color').last()
     return render(request, 'library/index.html', { 'games' : games, 'groups' : groups, 'context' : context, 'switches' : switches, 'themes' : themes , not_form : 'not_form'})
 
-# SECTION MAIN: TDI Demo "Membership Page Search Results"
+# SECTION MAIN: TDI Demo "Membership Page Member Search Results"
 @login_required
 def library_index_demo(request, pk):
     member = get_object_or_404(Member, pk=pk)
@@ -103,10 +103,20 @@ def library_index_demo(request, pk):
     }
     return render(request, 'library/demo.html', context)
 
-# @login_required
-# def detail_view(request, pk):
-#     result = get_object_or_404(MyModel, pk=pk)
-#     return render(request, 'demo.html', {'result': result})
+# SECTION MAIN: TDI Demo "Membership Page Dog Search Results"
+@login_required
+def dog_detail_demo(request, pk):
+    dog = get_object_or_404(Dog, pk=pk)
+    member = dog.d_member  # Ensure correct associated member is retrieved
+    facility = member.facility if member else None
+
+    context = {
+        'dog': dog,
+        'member': member,
+        'facility': facility,
+    }
+    return render(request, 'library/demo.html', context)
+
 
 # SECTION MAIN: TDI Demo "Membership Search Page"
 @login_required

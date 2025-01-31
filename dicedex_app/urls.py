@@ -16,7 +16,7 @@ urlpatterns = [
     path('library_03/', views.library_index_03, name='library_03'),
     path('library_demo_search/', views.library_index_demo_search, name='library_demo_search'),
     path('members/<int:pk>/', views.library_index_demo, name='library_demo'),
-    # path('library_demo/<int:pk>/', views.library_demo, name='library_demo'),
+    path('dog/<int:pk>/', views.dog_detail_demo, name='library_demo'),
 
     # signup
     path('accounts/signup/', views.signup, name='signup'),
